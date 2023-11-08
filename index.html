@@ -16,60 +16,65 @@
 <body class="home">
 
     <header class="header">
-        <img src="" alt="Logo de tienda">
-        <h1>Mi Tienda</h1>
+        <img class="header__logo" src="" alt="Logo de tienda">
+        <h1 class="header__title">Mi Tienda</h1>
+
         <nav class="navbar">
-            <ul>
-                <li><a href="./index.html"></a>Home</li>
+            <ul class="navbar__menu">
+                <li><a class="navbar__item navbar__item--active" href="./index.html"></a>Home</li>
+                <li><a class="navbar__item" href="#"></a>Nosotros</li>
+                <li><a class="navbar__item" href="#"></a>Contacto</li>
             </ul>
         </nav>
 
     </header>
 
     <main class="main">
-        <section>
-            <div>
-                <div>
-                    <h4>Primer Slide</h4>
-                    <img src="" alt="Primer imagen Slide">
+        <section class="section section--slider">
+            <div class="slider">
+                <div class="slider__one">
+                    <h4 class="slider__title">Primer Slide</h4>
+                    <img class="slider__image" src="" alt="Primer imagen Slide">
                 </div>
-                <div>
-                    <h4>Segunda Slide</h4>
-                    <img src="" alt="Segunda imagen Slide">
+                <div class="slider__two">
+                    <h4 class="slider__title">Segunda Slide</h4>
+                    <img class="slider__image" src="" alt="Segunda imagen Slide">
                 </div>
-                <div>
-                    <h4>Tercer Slide</h4>
-                    <img src="" alt="Tercer imagen Slide">
+                <div class="slider__three">
+                    <h4 class="slider__title">Tercer Slide</h4>
+                    <img class="slider__image" src="" alt="Tercer imagen Slide">
                 </div>
             </div>
         </section>
-        <section>
+        <section class="section section--products">
             <h3>Galeria de Productos</h3>
-            <figure>
-                <img src="" alt="Desc picture">
-                <h4>Nombre Primer Producto</h4>
-                <p>Descripción producto</p>
+            <figure class="card card--product">
+                <img class="card__image" src="" alt="Desc picture">
+                <h4 class="card__title">Nombre Primer Producto</h4>
+                <p class="card__description">Descripción producto</p>
                 <div>
-                    <button>Agregar</button>
-                    <span>0</span>
-                    <button>Quitar</button>
+                    <span class="card__price">5500,22</span>
+                    <button class="button button--sm button--confirm">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--danger">Quitar</button>
                 </div>
             </figure>
-            <figure>
-                <img src="" alt="Desc picture 2">
-                <h4>Nombre Primer Producto</h4>
-                <p>Descripción producto</p>
+            <figure class="card card--product">
+                <img class="card__image" src="" alt="Desc picture">
+                <h4 class="card__title">Nombre Primer Producto 2 </h4>
+                <p class="card__description">Descripción producto 2 </p>
                 <div>
-                    <button>Agregar</button>
-                    <span>0</span>
-                    <button>Quitar</button>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--confirm">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--danger">Quitar</button>
                 </div>
             </figure>
         </section>
     </main>
 
     <footer class="footer">
-       <span>&copy; 2023 Todos los derechos reservados </span>
+        <span>&copy; 2023 Todos los derechos reservados </span>
     </footer>
     <script src="./js/main.js"></script>
 </body>
