@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.header {
+    grid-area: header;
+
+    h1 {
+            color: red;
+        }
+}
