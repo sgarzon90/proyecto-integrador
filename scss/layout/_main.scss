@@ -1,7 +1,34 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
+@use "../base/typography" as t;
 
 .main {
     grid-area: main;
+    display: grid;
+
+
+    .section {
+        width: 100%;
+
+        &--slider {
+            overflow: hidden;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        &__title {
+            font-size: 3vw;
+            text-shadow: rgb(224, 207, 207) 1px 0 10px;
+            text-align: center;
+        }
+
+        &--products {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 0.5vw;
+
+        }
+
+    }
 
 }

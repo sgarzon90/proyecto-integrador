@@ -4,7 +4,26 @@
 .header {
     grid-area: header;
 
-    h1 {
-            color: red;
-        }
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-image: linear-gradient(125deg, white,  black, rgb(238, 15, 15) 90%);
+    border-radius: 10px;
+
+    &__logo {
+        width: 9%;
+    }
+
+    &__carrito {
+        width: 45px;
+    }
+
+    &__title {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 3vw;
+        text-shadow: rgb(224, 207, 207) 1px 0 10px;
+    }
+
+
 }

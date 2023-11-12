@@ -8,24 +8,29 @@
     <meta name="keywords" content="tienda,proyecto,ventas, proyecto integrador">
     <meta name="author" content="Santiago Garzon Gomez">
 
-    <title>Mi Tienda</title>
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>Punto Oriente - Inicio</title>
+    <link rel="shortcut icon" href="./images/headphones.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body class="home">
 
     <header class="header">
-        <img class="header__logo" src="" alt="Logo de tienda">
-        <h1 class="header__title">Mi Tienda</h1>
+        <img class="header__logo" src="./images/sinfondo.png" alt="Logo de tienda">
+
+        <h1 class="header__title">Punto Oriente</h1>
 
         <nav class="navbar">
             <ul class="navbar__menu">
-                <li><a class="navbar__item navbar__item--active" href="./index.html"></a>Home</li>
-                <li><a class="navbar__item" href="#"></a>Nosotros</li>
-                <li><a class="navbar__item" href="#"></a>Contacto</li>
+                <li><a class="navbar__item navbar__item--active" href="./index.html">Inicio</a></li>
+                <li><a class="navbar__item" href="./about.html">Nosotros</a></li>
+                <li><a class="navbar__item" href="#">Contacto</a></li>
             </ul>
         </nav>
+        <img class="header__carrito" src="./images/car4.png" alt="Logo de carrito">
+
 
     </header>
 
@@ -34,40 +39,132 @@
             <div class="slider">
                 <div class="slider__one">
                     <h4 class="slider__title">Primer Slide</h4>
-                    <img class="slider__image" src="" alt="Primer imagen Slide">
+                    <img class="slider__image" src="./images/gallery/img01.jpg" alt="Primer imagen Slide">
                 </div>
                 <div class="slider__two">
                     <h4 class="slider__title">Segunda Slide</h4>
-                    <img class="slider__image" src="" alt="Segunda imagen Slide">
+                    <img class="slider__image" src="./images/gallery/img02.jpg" alt="Segunda imagen Slide">
                 </div>
                 <div class="slider__three">
                     <h4 class="slider__title">Tercer Slide</h4>
-                    <img class="slider__image" src="" alt="Tercer imagen Slide">
+                    <img class="slider__image" src="./images/gallery/img03.jpg" alt="Tercer imagen Slide">
                 </div>
             </div>
         </section>
-        <section class="section section--products">
+        <div class="section section__title">
             <h3>Galeria de Productos</h3>
+        </div>
+        <section class="section section--products">
             <figure class="card card--product">
-                <img class="card__image" src="" alt="Desc picture">
-                <h4 class="card__title">Nombre Primer Producto</h4>
-                <p class="card__description">Descripción producto</p>
+                <img class="card__image" src="./images/gallery/cap1.jpeg" alt="Imagén de Gorra Plana">
+                <div class="card__intro">
+                    <h4 class="card__title">Gorra</h4>
+                    <p class="card__description">Gorra plana ajustable Toronto Blue Jays</p>
+                </div>
                 <div>
                     <span class="card__price">5500,22</span>
-                    <button class="button button--sm button--confirm">Agregar</button>
+                    <button class="button button--sm button--add">Agregar</button>
                     <span class="card__counter">0</span>
-                    <button class="button button--sm button--danger">Quitar</button>
+                    <button class="button button--sm button--remove">Quitar</button>
                 </div>
             </figure>
             <figure class="card card--product">
-                <img class="card__image" src="" alt="Desc picture">
-                <h4 class="card__title">Nombre Primer Producto 2 </h4>
-                <p class="card__description">Descripción producto 2 </p>
+                <img class="card__image" src="./images/gallery/cap2.jpeg" alt="Imagén de Gorra Beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera seis paneles Barons ajustable </p>
                 <div>
                     <span class="card__price">7500,00</span>
-                    <button class="button button--sm button--confirm">Agregar</button>
+                    <button class="button button--sm button--add">Agregar</button>
                     <span class="card__counter">0</span>
-                    <button class="button button--sm button--danger">Quitar</button>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap3.jpeg" alt="Imagén de Gorra de malla">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra de malla Salty Ocean ajustable </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap4.jpeg" alt="Imagén de Gorra beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera Los Ángeles punta diamante </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap5.jpeg" alt="Imagén de Gorra beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera seis paneles Milwaukee Bucks ajustable </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap6.jpeg" alt="Imagén de guitarra">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera ajustable Chicago White sox seis paneles </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/bolso1.jpeg" alt="Imagén de Porta gorras">
+                <h4 class="card__title">Porta gorras</h4>
+                <p class="card__description">Porta gorras con capacidad para entre seis y ocho gorras de todo tipo </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap7.jpeg" alt="Imagén de Gorra Monastery">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra Monastery calidad 1.1</p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap8.jpeg" alt="Imagén de Gorra plana">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra plana calidad 1.1 Los Angeles Angels ajustable </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product">
+                <img class="card__image" src="./images/gallery/cap9.jpeg" alt="Imagén de Gorra beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera New York Yankees ajustable seis paneles </p>
+                <div>
+                    <span class="card__price">7500,00</span>
+                    <button class="button button--sm button--add">Agregar</button>
+                    <span class="card__counter">0</span>
+                    <button class="button button--sm button--remove button--disabled">Quitar</button>
                 </div>
             </figure>
         </section>

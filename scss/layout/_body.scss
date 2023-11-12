@@ -1,7 +1,8 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
+@use "../base/typography" as typo;
 
-$_padding: 0.5vw;
+$_padding: 0.2vw;
 
 body {
     display: grid;
@@ -9,7 +10,12 @@ body {
         "header"
         "main"
         "footer";
+    gap: 1vw;
 
     padding: $_padding;
     width: calc(100% - (2*$_padding));
+    font-family: 'Libre Baskerville', serif;
+    background-image: url("/proyecto-integrador/images/bg.jpg");
+    // background-size: cover;
+    color: white;
 }

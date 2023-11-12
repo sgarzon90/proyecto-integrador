@@ -4,4 +4,26 @@
 .navbar {
     grid-area: navbar;
 
+    font-size: 20px;
+
+    &__menu {
+        display: flex;
+        font-size: 1.5rem;
+        margin: 0 2vw;
+        gap: 0.5vw;
+
+    }
+
+    &__item {
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
 }
