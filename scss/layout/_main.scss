@@ -1,6 +1,5 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
-@use "../base/typography" as t;
 
 .main {
     grid-area: main;
@@ -23,10 +22,12 @@
         }
 
         &--products {
-            display: grid;
+            /*  display: grid;
             grid-template-columns: auto auto auto;
-            gap: 0.5vw;
-
+            gap: 0.5vw; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
 
     }

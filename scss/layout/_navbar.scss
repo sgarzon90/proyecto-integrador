@@ -19,9 +19,16 @@
     }
 
 
+    &__item--active {
+        background: rgb(27, 27, 27, .5);
+        border-radius: 5px;
+        padding: 8px 15px;
+    }
 
-
-
+&__item:hover {
+background: rgb(27, 27, 27, .5);
+    transition: background-color 0.3s, color 0.3s;
+}
 
 
 
