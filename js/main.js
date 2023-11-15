@@ -1,29 +1,25 @@
-
-// Función para sumar al contador de una tarjeta específica
 function sumar(cardId) {
-    var counterElement = document.getElementById('counter-' + cardId);
-    var removeButton = document.querySelector('#product' + cardId + ' .button--remove');
+    let counterElement = document.getElementById('counter-' + cardId);
+    let removeButton = document.querySelector('#product' + cardId + ' .button--remove');
 
-    var counterValue = parseInt(counterElement.textContent);
+    let counterValue = parseInt(counterElement.textContent);
     counterValue += 1;
     counterElement.textContent = counterValue;
 
-    // Habilitar el botón de quitar
     removeButton.disabled = false;
 }
 
 
 function restar(cardId) {
-    var counterElement = document.getElementById('counter-' + cardId);
-    var removeButton = document.querySelector('#product' + cardId + ' .button--remove');
+    let counterElement = document.getElementById('counter-' + cardId);
+    let removeButton = document.querySelector('#product' + cardId + ' .button--remove');
 
-    var counterValue = parseInt(counterElement.textContent);
+    let counterValue = parseInt(counterElement.textContent);
     if (counterValue > 0) {
         counterValue -= 1;
         counterElement.textContent = counterValue;
     }
 
-    // Deshabilitar el botón de quitar si el contador llega a cero
     if (counterValue === 0) {
         removeButton.disabled = true;
     }
