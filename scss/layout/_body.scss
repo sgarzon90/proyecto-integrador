@@ -15,12 +15,9 @@ body {
     padding: $_padding;
     width: calc(100% - (2*$_padding));
     font-family: 'Libre Baskerville', serif;
-    background-image: url("/proyecto-integrador/images/bg1.jpg");
+    // background-image: url("/proyecto-integrador/images/bg1.jpg");
     // background-size: cover; 
-/* 
-    linear-gradient(135deg, #0f147355 25%, transparent 25%) -23px 0/ 46px 46px,
-        linear-gradient(225deg, #0f1473 25%, transparent 25%) -23px 0/ 46px 46px,
-        linear-gradient(315deg, #0f147355 25%, transparent 25%) 0px 0/ 46px 46px,
-        linear-gradient(45deg, #0f1473 25%, #dfdfe5 25%) 0px 0/ 46px 46px; */
+
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
 }
