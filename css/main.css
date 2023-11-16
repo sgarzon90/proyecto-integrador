@@ -20,26 +20,6 @@ a:link {
   border-radius: 0.035rem;
   font-family: "Libre Baskerville", serif;
   cursor: pointer;
-  /*
-      &--lg {
-          width: 12rem;
-          padding: 0.375rem;
-          font-size: 1rem;
-      }
-  */
-  /*    &--disabled {
-          background-image: linear-gradient(white, white);
-          border-color: gray;
-          color: gray;
-          transition: all 300ms;
-          cursor: default;
-
-          &:hover,
-          &:active {
-              background-image: linear-gradient(120deg, white, black, rgb(238, 15, 15) 80%);
-              border-color: white;
-          }
-      }  */
 }
 .button--sm {
   width: 4rem;
@@ -69,18 +49,38 @@ a:link {
   transition: transform 0.5s, background-color 0.8s;
   transform: scale(1.02);
 }
+.button--lg {
+  width: 12rem;
+  padding: 0.375rem;
+  font-size: 1rem;
+}
+.button--add {
+  transition: all 100ms;
+}
 .button--add:hover, .button--add:active {
   border-color: black;
   transform: scale(1.03);
 }
 .button--remove {
-  background-image: linear-gradient(10deg, rgb(0, 0, 0), rgb(255, 255, 255));
+  background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
   border-color: black;
   color: black;
 }
 .button--remove:hover, .button--remove:active {
   border-color: black;
-  transform: scale(1.05);
+  color: white;
+  transform: scale(1.03);
+}
+.button--disabled {
+  background-image: linear-gradient(white, white);
+  border-color: gray;
+  color: gray;
+  transition: all 100ms;
+  cursor: default;
+}
+.button--disabled:hover, .button--disabled:active {
+  background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
+  border-color: black;
 }
 
 .card {
@@ -112,6 +112,10 @@ a:link {
 }
 .card:hover .card__image {
   transform: scale(1.06) rotate(-0.5deg);
+}
+.card .tooltip {
+  position: relative;
+  display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
@@ -184,7 +188,7 @@ body {
   padding: 0.2vw;
   width: calc(100% - 0.4vw);
   font-family: "Libre Baskerville", serif;
-  background: url("../../images/bg1.jpg");
+  background-image: url("/images/bg1.jpg"), url("/proyecto-integrador/images/bg1.jpg");
   color: white;
 }
 
@@ -208,7 +212,7 @@ body {
   width: 100%;
   margin: 5px 0 5px 0;
   padding: 5px;
-  background: rgba(194, 194, 194, 0.966);
+  background: rgba(226, 221, 221, 0.966);
 }
 .contact__form .toast {
   position: absolute;
@@ -220,6 +224,26 @@ body {
   padding: 10px;
   border-radius: 5px;
   display: none;
+}
+
+.productForm {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px groove;
+}
+.productForm .form__group {
+  margin-bottom: 20px;
+}
+.productForm .form__group .form__input {
+  width: 100%;
+  padding: 5px;
+}
+.productForm .form__group .form__input--textarea {
+  height: 20vh;
+  resize: none;
+}
+.productForm .form__group .form__input--file {
+  width: 100%;
 }
 
 .header {
@@ -354,4 +378,12 @@ ol li {
 .main__contact .title {
   text-align: center;
   padding: 5px;
+}
+
+.main__product {
+  display: flex;
+  justify-content: space-around;
+}
+.main__product .product {
+  width: 60%;
 }/*# sourceMappingURL=main.css.map */

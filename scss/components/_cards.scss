@@ -43,7 +43,14 @@
         transform: scale(1.06) rotate(-0.5deg);
     }
 
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
 }
+
+
 
 @media screen and (max-width: 768px) {
     .card {

@@ -13,10 +13,9 @@
         font-size: 0.80rem;
         border-radius: 8px;
         color: white;
-        // background-image: linear-gradient(10deg, rgb(0, 0, 0), rgb(255, 255, 255));
         background-image: linear-gradient(30deg, rgb(255, 208, 0), black);
         border-color: black;
-       
+
     }
 
     &--md {
@@ -41,16 +40,15 @@
         }
     }
 
-
-    /*
     &--lg {
         width: 12rem;
         padding: 0.375rem;
         font-size: 1rem;
     }
-*/
+
     &--add {
         // @include mix.button-default(rgb(0, 0, 0), rgb(207, 0, 0), white);
+        transition: all 100ms;
 
         &:hover,
         &:active {
@@ -61,30 +59,32 @@
     }
 
     &--remove {
-        background-image: linear-gradient(10deg, rgb(0, 0, 0), rgb(255, 255, 255));
+        // background-image: linear-gradient(10deg, rgb(0, 0, 0), rgb(255, 255, 255));
+        background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
         border-color: black;
         color: black;
 
         &:hover,
         &:active {
-            // background-image: linear-gradient(125deg, darkred, red, darkred 65%);
             border-color: black;
-            transform: scale(1.05);
+            color: white;
+            transform: scale(1.03);
         }
     }
 
-    /*    &--disabled {
-            background-image: linear-gradient(white, white);
-            border-color: gray;
-            color: gray;
-            transition: all 300ms;
-            cursor: default;
-    
-            &:hover,
-            &:active {
-                background-image: linear-gradient(120deg, white, black, rgb(238, 15, 15) 80%);
-                border-color: white;
-            }
-        }  */
+    &--disabled {
+        background-image: linear-gradient(white, white);
+        border-color: gray;
+        color: gray;
+        transition: all 100ms;
+        cursor: default;
+
+        &:hover,
+        &:active {
+            // background-image: linear-gradient(120deg, white, black, rgb(238, 15, 15) 80%);
+            background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
+            border-color: black;
+        }
+    }
 
 }

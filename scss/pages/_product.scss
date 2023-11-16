@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.main__product {
+        display: flex;
+        justify-content: space-around;
+
+        .product {
+            width: 60%;
+        }
+}

@@ -43,6 +43,39 @@ function submitForm() {
     }
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('productForm');
+    const guardarBtn = document.getElementById('guardarBtn');
+
+    form.addEventListener('input', function () {
+        const inputs = form.querySelectorAll('input[required]');
+        let isValid = true;
+
+        inputs.forEach(function (input) {
+            if (!input.checkValidity()) {
+                isValid = false;
+            }
+        });
+
+        guardarBtn.disabled = !isValid;
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const success = Math.random() < 0.5;
+
+        if (success) {
+            showToast('¡Producto guardado con éxito!');
+            document.getElementById('productForm').reset();
+        } else {
+            showToast('Error al guardar el producto');
+        }
+    });
+
+});
+
 function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;

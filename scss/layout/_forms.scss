@@ -15,11 +15,10 @@
             width: 100%;
             margin: 5px 0 5px 0;
             padding: 5px;
-            background: rgba(194, 194, 194, 0.966);
+            background: rgba(226, 221, 221, 0.966);
         }
 
     }
-
 
     .toast {
         position: absolute;
@@ -31,5 +30,32 @@
         padding: 10px;
         border-radius: 5px;
         display: none;
+    }
+
+}
+
+.productForm {
+
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px groove;
+
+    .form__group {
+
+        margin-bottom: 20px;
+
+        .form__input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .form__input--textarea {
+            height: 20vh;
+            resize: none;
+        }
+
+        .form__input--file {
+            width: 100%;
+        }
     }
 }

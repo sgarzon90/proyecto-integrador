@@ -56,7 +56,7 @@
                 <h2 class="title title__contactForm">Formulario de Contacto</h2>
                 <form class="contactform" id="contactForm">
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" title="Ingrese un nombre válido (solo letras y espacios)">
 
                     <label for="email">Correo electrónico:</label>
                     <input type="email" id="email" name="email" required>
