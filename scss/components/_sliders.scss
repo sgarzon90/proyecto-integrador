@@ -5,7 +5,7 @@ $_width: 100%;
 
 .slider {
     position: relative;
-    height: 40vh;
+    height: 45vh;
     width: calc($_width * 3);
     display: flex;
 
@@ -28,7 +28,7 @@ $_width: 100%;
 
     &__image {
         width: $_width;
-        object-fit: cover;
+        object-fit:fill;
         object-position: center;
     }
 

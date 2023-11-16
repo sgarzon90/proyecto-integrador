@@ -1,2 +1,25 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/mixins" as mix;
+
+
+.section__title-mission-vision {
+    background: rgb(27, 27, 27, .9);
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section-paragraph {
+    padding: 10px;
+    font-size: 1rem;
+}
+ol {
+    margin-left: 25px;
+    padding-left: 15px;
+
+    li {
+        margin-bottom: 10px;
+    }
+}

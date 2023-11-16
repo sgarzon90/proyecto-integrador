@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body class="home">
+<body class="contact">
 
     <header class="header">
         <img class="header__logo" src="./images/logo.png" alt="Logo de tienda">
@@ -30,35 +30,44 @@
             </ul>
         </nav>
         <img class="header__carrito" src="./images/car4.png" alt="Logo de carrito">
-
-
     </header>
 
-    <main class="main">
-        <section class="section section__contactinfo" id="contact-info">
-            <h2>Datos de Contacto</h2>
-            <p>Teléfono: +57 123456789</p>
-            <p>Email: punto Oriente@empresa.com</p>
-            <p>Domicilio: Plaza Botero, Medellín</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0856704545045!2d-75.56864147956966!3d6.252442375082657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428fecb4dff77%3A0x2e5a7e51ab929892!2sPlaza%20Botero%20-%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1sen!2sco!4v1699822543322!5m2!1sen!2sco"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <main class="main__contact">
+
+        <section class="section contact__info" id="contact-info">
+            <div class="contact__infocontainer">
+                <h2 class="title title__iframe">Sede Medellín</h2>
+                <iframe class="iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0856704545045!2d-75.56864147956966!3d6.252442375082657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428fecb4dff77%3A0x2e5a7e51ab929892!2sPlaza%20Botero%20-%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1sen!2sco!4v1699822543322!5m2!1sen!2sco"
+                    allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <h2 class="title title__contactinfo">Datos de Contacto</h2>
+                <div class="contactinfo">
+                    <p class="contactinfo__item"><img src="./images/phone.png" alt="logo celular"> Teléfono: +57 123456789</p>
+                    <p class="contactinfo__item"><img src="./images/email.png" alt="logo email"> Email: PuntoOriente@empresa.com</p>
+                    <p class="contactinfo__item"><img src="./images/map.png" alt="logo mapa"> Dirección: Plaza Botero, Medellín</p>
+                </div>
+                
+            </div>
         </section>
-        <section id="contact-form">
-            <h2>Formulario de Contacto</h2>
-            <form id="contactForm">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
+        <section class="section contact__form" id="contact-form">
+            <div class="contact__formcontainer">
+                <h2 class="title title__contactForm">Formulario de Contacto</h2>
+                <form class="contactform" id="contactForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="query">Consulta:</label>
-                <textarea id="query" name="query" rows="4" required></textarea>
+                    <label for="query">Consulta:</label>
+                    <textarea id="query" name="query" rows="4" required></textarea>
 
-                <button type="button" onclick="submitForm()">Enviar Consulta</button>
-            </form>
+                    <div id="toast" class="toast"></div>
+                    <button class="button button--md button--form" type="button" onclick="submitForm()">Enviar Consulta</button>
+                </form>
+            </div>
         </section>
     </main>
 

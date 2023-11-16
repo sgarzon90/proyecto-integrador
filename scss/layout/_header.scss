@@ -7,22 +7,28 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-image: linear-gradient(120deg, white, black, rgb(238, 15, 15) 80%);
-    border-radius: 10px;
+    // background-image: linear-gradient(120deg, white, black, rgba(247, 241, 241, 0.637) 90%);
+    background-image: linear-gradient(120deg, white , black, rgba(255, 255, 0, 0.637) 90%);
+    border-radius: 8px;
 
     &__logo {
-        width: 9%;
+        width: 10%;
+        // height: 100%;
     }
 
     &__carrito {
         width: 3.5%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__title {
         flex-grow: 1;
         text-align: center;
-        font-size: 3vw;
-        text-shadow: rgb(224, 207, 207) 1px 0 10px;
+        font-size: 3.5vw;
+        // text-shadow: rgb(230, 230, 230) 1px 0 5px;
     }
 
 

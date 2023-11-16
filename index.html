@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Esta es una página de ventas gorras">
+    <meta name="description" content="Esta es una página de ventas de gorras">
     <meta name="keywords" content="tienda,proyecto,ventas, proyecto integrador, gorras">
     <meta name="author" content="Santiago Garzon Gomez">
 
@@ -19,7 +19,6 @@
 
     <header class="header">
         <img class="header__logo" src="./images/logo.png" alt="Logo de tienda">
-
         <h1 class="header__title">Punto Oriente</h1>
 
         <nav class="navbar">
@@ -30,8 +29,6 @@
             </ul>
         </nav>
         <img class="header__carrito" src="./images/car4.png" alt="Logo de carrito">
-
-
     </header>
 
     <main class="main">
@@ -61,6 +58,7 @@
                 <p class="card__description">Gorra plana ajustable Toronto Blue Jays</p>
                 <div>
                     <span class="card__price">5500,22</span>
+                    <span onclick="sumar(1)"><img src="./images/sum.png" alt=""></span>
                     <button class="button button--sm button--add" onclick="sumar(1)">Agregar</button>
                     <span class="card__counter" id="counter-1">0</span>
                     <button class="button button--sm button--remove button--disabled" onclick="restar(1)"
@@ -164,8 +162,7 @@
                 </div>
             </figure>
             <figure class="card card--product" id="product10">
-                <img class="card__image" src="./images/gallery/cap9.jpeg" alt="Imagén de Gorra beisbolera">
-
+                <img class="card__image" src="./images/gallery/cap12.jpg" alt="Imagén de Gorra beisbolera">
                 <h4 class="card__title">Gorra</h4>
                 <p class="card__description">Gorra beisbolera New York Yankees ajustable seis paneles </p>
                 <div>
@@ -173,6 +170,30 @@
                     <button class="button button--sm button--add" onclick="sumar(10)">Agregar</button>
                     <span class="card__counter" id="counter-10">0</span>
                     <button class="button button--sm button--remove button--disabled" onclick="restar(10)"
+                        disabled>Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product" id="product11">
+                <img class="card__image" src="./images/gallery/cap13.jpg" alt="Imagén de Gorra beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera New York Yankees ajustable seis paneles </p>
+                <div>
+                    <span class="card__price">5500,22</span>
+                    <button class="button button--sm button--add" onclick="sumar(11)">Agregar</button>
+                    <span class="card__counter" id="counter-11">0</span>
+                    <button class="button button--sm button--remove button--disabled" onclick="restar(11)"
+                        disabled>Quitar</button>
+                </div>
+            </figure>
+            <figure class="card card--product" id="product12">
+                <img class="card__image" src="./images/gallery/cap16.JPG" alt="Imagén de Gorra beisbolera">
+                <h4 class="card__title">Gorra</h4>
+                <p class="card__description">Gorra beisbolera New York Yankees ajustable seis paneles </p>
+                <div>
+                    <span class="card__price">5500,22</span>
+                    <button class="button button--sm button--add" onclick="sumar(12)">Agregar</button>
+                    <span class="card__counter" id="counter-12">0</span>
+                    <button class="button button--sm button--remove button--disabled" onclick="restar(12)"
                         disabled>Quitar</button>
                 </div>
             </figure>
