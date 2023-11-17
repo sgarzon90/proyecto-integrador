@@ -24,7 +24,6 @@
 
     &__title {
         font-size: 20px;
-        /* Set font size for title */
     }
 
     &__price {
@@ -55,13 +54,11 @@
 @media screen and (max-width: 768px) {
     .card {
         width: calc(50% - 40px);
-        /* Adjust width for smaller screens with 2 cards per row */
     }
 }
 
 @media screen and (max-width: 480px) {
     .card {
         width: calc(100% - 40px);
-        /* Adjust width for smaller screens with 1 card per row */
     }
 }

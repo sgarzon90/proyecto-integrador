@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap");
 * {
@@ -101,7 +102,6 @@ a:link {
 }
 .card__title {
   font-size: 20px;
-  /* Set font size for title */
 }
 .card__price::before {
   content: "Precio: $ ";
@@ -121,18 +121,16 @@ a:link {
 @media screen and (max-width: 768px) {
   .card {
     width: calc(50% - 40px);
-    /* Adjust width for smaller screens with 2 cards per row */
   }
 }
 @media screen and (max-width: 480px) {
   .card {
     width: calc(100% - 40px);
-    /* Adjust width for smaller screens with 1 card per row */
   }
 }
 .slider {
   position: relative;
-  height: 45vh;
+  height: 50vh;
   width: 300%;
   display: flex;
   animation: move-slide 18s ease-in-out infinite;
@@ -144,11 +142,15 @@ a:link {
 }
 .slider__title {
   position: absolute;
-  font-size: 2rem;
+  font-style: italic;
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.5em;
+  color: white;
 }
 .slider__image {
   width: 100%;
-  object-fit: fill;
+  object-fit: contain;
   object-position: center;
 }
 @keyframes move-slide {
@@ -212,7 +214,7 @@ body {
   width: 100%;
   margin: 5px 0 5px 0;
   padding: 5px;
-  background: rgba(226, 221, 221, 0.966);
+  background: rgb(255, 255, 255);
 }
 .contact__form .toast {
   position: absolute;
@@ -243,7 +245,7 @@ body {
   resize: none;
 }
 .productForm .form__group .form__input--file {
-  width: 100%;
+  width: calc(100% - 160px);
 }
 
 .header {
@@ -269,6 +271,31 @@ body {
   font-size: 3.5vw;
 }
 
+@media (max-width: 768px) {
+  .header__logo {
+    max-width: 80px;
+    /* Reducir el tamaño del logo */
+  }
+  .header__title {
+    font-size: 20px;
+    /* Reducir el tamaño del título */
+    margin-top: 10px;
+    /* Espacio entre el logo y el título */
+  }
+  .navbar {
+    display: inline-block;
+    /* Mostrar la barra de navegación */
+  }
+  .navbar__menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .navbar__item {
+    font-size: 1rem;
+    /* Espaciado entre elementos de la barra de navegación */
+  }
+}
 .main {
   grid-area: main;
   display: grid;
@@ -325,6 +352,66 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header__logo {
+    margin-bottom: 10px;
+  }
+  .header__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .navbar__menu {
+    padding: 10px 0;
+  }
+  .card--product {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .card__image {
+    width: 100%;
+    height: auto;
+  }
+  .card__title,
+  .card__description,
+  .card__price {
+    font-size: 14px;
+  }
+  .button--add,
+  .button--remove,
+  .add--product {
+    margin-top: 10px;
+  }
+}
+/* Pantallas medianas y grandes (tablets y escritorios) */
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  .navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  .navbar__item {
+    margin-left: 20px;
+  }
+  .section--products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card--product {
+    width: 300px;
+  }
+}
 .section__title-mission-vision {
   background: rgba(27, 27, 27, 0.9);
   font-size: 32px;
@@ -347,6 +434,31 @@ ol li {
   margin-bottom: 10px;
 }
 
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header {
+    text-align: center;
+  }
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .navbar__item {
+    margin: 10px 0;
+  }
+  .section__title-mission-vision {
+    font-size: 24px;
+  }
+  .section-paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .section__mission-vision ol {
+    padding-left: 20px;
+  }
+}
 .main__contact {
   display: flex;
   justify-content: space-between;
@@ -380,10 +492,128 @@ ol li {
   padding: 5px;
 }
 
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .navbar__item {
+    margin: 5px 0;
+  }
+  .contact__infocontainer,
+  .contact__formcontainer {
+    padding: 20px;
+  }
+  .contactinfo__item {
+    margin-bottom: 10px;
+  }
+  .iframe {
+    width: 100%;
+    height: 300px;
+    /* Ajusta la altura del mapa como desees */
+  }
+  .contactform {
+    display: flex;
+    flex-direction: column;
+  }
+  .contactform label,
+  .contactform input,
+  .contactform textarea,
+  .contactform button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+/* Pantallas medianas y grandes (tablets y escritorios) */
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  .navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  .navbar__item {
+    margin-left: 20px;
+  }
+  .contact__infocontainer,
+  .contact__formcontainer {
+    max-width: 50%;
+    /* Ancho máximo para los contenedores */
+    margin: 0 auto;
+    padding: 40px;
+  }
+  .contactinfo__item {
+    margin-bottom: 20px;
+  }
+  .iframe {
+    width: 100%;
+    height: 400px;
+    /* Ajusta la altura del mapa como desees */
+  }
+  .contactform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .contactform label,
+  .contactform input,
+  .contactform textarea,
+  .contactform button {
+    width: 100%;
+  }
+}
 .main__product {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 .main__product .product {
   width: 60%;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header {
+    text-align: center;
+  }
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .navbar__item {
+    margin: 10px 0;
+  }
+  .title__productForm {
+    font-size: 24px;
+  }
+  .form__label {
+    font-size: 16px;
+  }
+  .form__input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  /* Puedes seguir ajustando los estilos según tu diseño */
+}
+/* Estilos para pantallas medianas y grandes (tabletas y escritorios) */
+@media (min-width: 769px) {
+  /* Aquí puedes agregar estilos específicos para pantallas más grandes */
 }/*# sourceMappingURL=main.css.map */

@@ -33,3 +33,34 @@
 
 
 }
+
+@media (max-width: 768px) {
+
+    .header__logo {
+        max-width: 80px;
+        /* Reducir el tamaño del logo */
+    }
+
+    .header__title {
+        font-size: 20px;
+        /* Reducir el tamaño del título */
+        margin-top: 10px;
+        /* Espacio entre el logo y el título */
+    }
+
+    .navbar {
+        display: inline-block;
+        /* Mostrar la barra de navegación */
+    }
+
+    .navbar__menu {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+
+    .navbar__item {
+        font-size: 1rem;
+        /* Espaciado entre elementos de la barra de navegación */
+    }
+}

@@ -5,7 +5,7 @@ $_width: 100%;
 
 .slider {
     position: relative;
-    height: 45vh;
+    height: 50vh;
     width: calc($_width * 3);
     display: flex;
 
@@ -22,25 +22,55 @@ $_width: 100%;
 
     &__title {
         position: absolute;
-        // color: green;
-        font-size: 2rem;
+        font-style: italic;
+        text-decoration: underline;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 1.5em;
+        color: white;
     }
 
     &__image {
         width: $_width;
-        object-fit:fill;
+        object-fit: contain;
         object-position: center;
     }
 
     @keyframes move-slide {
-        0% { left: 0;}
-        20% { left: 0;}
-        25% { left: -100%;}
-        45% { left: -100%;}
-        50% { left: -200%;}
-        70% { left: -200%;}
-        75% { left: -100%;}
-        95% { left: -100%;}
-        100% { left: 0;}
+        0% {
+            left: 0;
+        }
+
+        20% {
+            left: 0;
+        }
+
+        25% {
+            left: -100%;
+        }
+
+        45% {
+            left: -100%;
+        }
+
+        50% {
+            left: -200%;
+        }
+
+        70% {
+            left: -200%;
+        }
+
+        75% {
+            left: -100%;
+        }
+
+        95% {
+            left: -100%;
+        }
+
+        100% {
+            left: 0;
+        }
     }
 }
+
