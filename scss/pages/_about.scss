@@ -2,6 +2,9 @@
 @use "../abstracts/mixins" as mix;
 
 
+.about {
+     min-height: 100vh;
+   
 .section__title-mission-vision {
     background: rgb(27, 27, 27, .9);
     font-size: 32px;
@@ -15,6 +18,7 @@
     padding: 10px;
     font-size: 1rem;
 }
+
 ol {
     margin-left: 25px;
     padding-left: 15px;
@@ -23,8 +27,9 @@ ol {
         margin-bottom: 10px;
     }
 }
-
+}
 @media (max-width: 768px) {
+
     .section__title-mission-vision {
         font-size: 20px;
     }
@@ -36,5 +41,7 @@ ol {
 
     .section__mission-vision ol {
         padding-left: 10px;
+        font-size: 12px;
+        line-height: 1.5;
     }
 }

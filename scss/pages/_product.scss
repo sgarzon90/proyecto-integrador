@@ -2,35 +2,27 @@
 @use "../abstracts/mixins" as mix;
 
 .main__product {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        .product {
-            width: 60%;
-        }
+    .product {
+        width: 60%;
+    }
 }
 
-/* Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
 
+    .main__product {
+        align-items: flex-start;
+    }
+
     .title__productForm {
-        font-size: 24px;
+        font-size: 22px;
+        width: 340px;
+        text-align: center;
     }
-
-    .form__label {
-        font-size: 16px;
-    }
-
-    .form__input {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    /* Puedes seguir ajustando los estilos según tu diseño */
 }
 
-/* Estilos para pantallas medianas y grandes (tabletas y escritorios) */
-@media (min-width: 769px) {
-    /* Aquí puedes agregar estilos específicos para pantallas más grandes */
-}
+
+@media (min-width: 769px) {}
