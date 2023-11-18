@@ -11,14 +11,14 @@
 
         &--slider {
             overflow: hidden;
-           /*  height: 100%;*/
-            border-radius: 10px; 
+            /*  height: 100%;*/
+            border-radius: var.$boderRadiusPrimary;
         }
 
         &__title {
             font-size: 3vw;
-            text-shadow: rgb(255, 255, 255) 1px 0 5px;
-            text-align: center;
+            text-shadow: var.$colorPrimary 1px 0 5px;
+            text-align: var.$textAlignPrimaryProperty;
         }
 
         &--products {
@@ -29,9 +29,9 @@
 
         &__mission-vision {
             margin: 0 auto;
-            background: rgb(27, 27, 27, .5);
-            border-radius: 10px;
-            width: 80%;
+            background: var.$textShadowTitle;
+            border-radius: var.$boderRadiusPrimary;
+            width: 85%;
         }
     }
 }

@@ -4,7 +4,7 @@
 .card {
 
     width: 350px;
-    box-shadow: 5px 5px 20px black;
+    box-shadow: 5px 5px 20px var.$colorSecondary;
     overflow: hidden;
     margin: 10px;
     text-align: center;
@@ -23,7 +23,7 @@
     }
 
 
-    &__title{
+    &__title {
         font-size: 20px;
     }
 
@@ -59,7 +59,7 @@
 
     .card__image {
         max-width: 100%;
-            height: auto;
+        height: auto;
     }
 
     .card__title,
@@ -74,11 +74,4 @@
 
 }
 
-@media (min-width: 769px) {}
-
-/* @media screen and (max-width: 480px) {
-    .card {
-        width: calc(100% - 40px);
-    }
-} */
-
+// @media (min-width: 769px) {}

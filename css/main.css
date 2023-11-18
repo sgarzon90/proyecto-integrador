@@ -1,5 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap");
+/* $colorDark: rgb(33, 37, 41);
+$colorLight: rgb(248, 249, 250);
+$colorSuccess: rgb(25, 135, 84);
+$colorDanger: rgb(220, 53, 69);
+$colorWarning: rgb(255, 193, 7);
+$colorDisabled: rgb(206, 212, 218);
+$colorTitlePrimary: $colorDark;
+$colorTitleSecondary: $colorDark;
+$colorSubtitle: $colorDark;
+$colorParagraph: $colorDark;
+$colorBackground-1: #4e342e;
+$colorBackground-2: #6d4c41;
+$colorBackground-3: #a1887f;
+$colorBorderDark: $colorDark;
+$colorBorderLight: $colorLight;
+$colorBorderDisabled: $colorDisabled;
+$colorButtonDark: $colorDark;
+$colorButtonLight: $colorLight;
+$colorButtonDisabled: $colorDisabled; */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,7 +35,7 @@ a:link {
 }
 
 .button {
-  border: 0.0625rem solid #000000;
+  border: 0.0625rem solid rgb(0, 0, 0);
   border-radius: 0.035rem;
   font-family: "Libre Baskerville", serif;
   cursor: pointer;
@@ -25,10 +44,10 @@ a:link {
   width: 4rem;
   padding: 5px;
   font-size: 0.8rem;
-  border-radius: 8px;
-  color: white;
-  background-image: linear-gradient(30deg, rgb(255, 208, 0), black);
-  border-color: black;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(30deg, rgb(255, 208, 0), rgb(0, 0, 0));
+  border-color: rgb(0, 0, 0);
 }
 .button--md {
   width: 9rem;
@@ -38,14 +57,14 @@ a:link {
 .button--form {
   margin: 5px auto;
   border-radius: 10px;
-  color: white;
-  background-color: #000000;
-  border-color: white;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(255, 255, 255);
   transition: transform 0.5s, background-color 0.8s;
 }
 .button--form:hover {
-  background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
-  border-color: white;
+  background-image: linear-gradient(20deg, rgb(255, 208, 0), rgb(0, 0, 0));
+  border-color: rgb(255, 255, 255);
   transition: transform 0.5s, background-color 0.8s;
   transform: scale(1.02);
 }
@@ -58,34 +77,34 @@ a:link {
   transition: all 100ms;
 }
 .button--add:hover, .button--add:active {
-  border-color: black;
+  border-color: rgb(0, 0, 0);
   transform: scale(1.03);
 }
 .button--remove {
-  background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
-  border-color: black;
-  color: black;
+  background-image: linear-gradient(20deg, rgb(255, 208, 0), rgb(0, 0, 0));
+  border-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 .button--remove:hover, .button--remove:active {
-  border-color: black;
-  color: white;
+  border-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   transform: scale(1.03);
 }
 .button--disabled {
-  background-image: linear-gradient(white, white);
-  border-color: gray;
-  color: gray;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  border-color: rgb(128, 128, 128);
+  color: rgb(128, 128, 128);
   transition: all 100ms;
   cursor: default;
 }
 .button--disabled:hover, .button--disabled:active {
-  background-image: linear-gradient(20deg, rgb(255, 208, 0), black);
-  border-color: black;
+  background-image: linear-gradient(20deg, rgb(255, 208, 0), rgb(0, 0, 0));
+  border-color: rgb(0, 0, 0);
 }
 
 .card {
   width: 350px;
-  box-shadow: 5px 5px 20px black;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0);
   overflow: hidden;
   margin: 10px;
   text-align: center;
@@ -134,11 +153,6 @@ a:link {
     align-items: center;
   }
 }
-/* @media screen and (max-width: 480px) {
-    .card {
-        width: calc(100% - 40px);
-    }
-} */
 .slider {
   position: relative;
   height: 50vh;
@@ -201,7 +215,7 @@ body {
   width: calc(100% - 0.4vw);
   font-family: "Libre Baskerville", serif;
   background-image: url("/images/bg1.jpg"), url("/proyecto-integrador/images/bg1.jpg");
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .footer {
@@ -236,7 +250,7 @@ body {
   right: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   transform: translateX(-50%);
-  color: red;
+  color: rgb(255, 0, 0);
   padding: 10px;
   border-radius: 5px;
   display: none;
@@ -261,6 +275,9 @@ body {
 .productForm .form__group .form__input--file {
   width: calc(100% - 160px);
 }
+.productForm .form__group--checkbox {
+  margin: 5px 0 10px 0;
+}
 .productForm .button__content {
   display: flex;
 }
@@ -271,7 +288,7 @@ body {
     top: 0px;
     right: -200px;
     transform: translateX(-40%);
-    color: red;
+    color: rgb(255, 0, 0);
   }
   .productForm {
     width: 90vw;
@@ -284,7 +301,7 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-image: linear-gradient(120deg, white, black, rgba(255, 255, 0, 0.637) 90%);
+  background-image: linear-gradient(120deg, rgb(255, 255, 255), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 90%);
   border-radius: 8px;
 }
 .header__logo {
@@ -312,7 +329,7 @@ body {
   .header {
     flex-direction: column;
     align-items: stretch;
-    background-image: linear-gradient(110deg, rgb(255, 255, 255), black, rgba(255, 255, 0, 0.637) 95%);
+    background-image: linear-gradient(110deg, rgb(255, 255, 255), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 95%);
     text-align: center;
   }
   .header__title {
@@ -360,9 +377,9 @@ body {
 }
 .main .section__mission-vision {
   margin: 0 auto;
-  background: rgba(27, 27, 27, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  width: 80%;
+  width: 85%;
 }
 
 @media (max-width: 768px) {
@@ -380,7 +397,7 @@ body {
   gap: 0.5vw;
 }
 .navbar__item {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .navbar__item--active {
   background: rgba(27, 27, 27, 0.5);
@@ -412,7 +429,7 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
-.about .section-paragraph {
+.about .section__paragraph {
   padding: 10px;
   font-size: 1rem;
 }
@@ -428,7 +445,7 @@ body {
   .section__title-mission-vision {
     font-size: 20px;
   }
-  .section-paragraph {
+  .section__paragraph {
     font-size: 12px;
     line-height: 1.5;
   }

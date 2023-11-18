@@ -3,38 +3,39 @@
 
 
 .about {
-     min-height: 100vh;
-   
-.section__title-mission-vision {
-    background: rgb(27, 27, 27, .9);
-    font-size: 32px;
-    margin-bottom: 10px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-}
+    min-height: 100vh;
 
-.section-paragraph {
-    padding: 10px;
-    font-size: 1rem;
-}
-
-ol {
-    margin-left: 25px;
-    padding-left: 15px;
-
-    li {
+    .section__title-mission-vision {
+        background: rgb(27, 27, 27, .9);
+        font-size: 32px;
         margin-bottom: 10px;
+        text-align: var.$textAlignPrimaryProperty;
+        border-radius: var.$boderRadiusPrimary;
+        padding: 10px;
+    }
+
+    .section__paragraph {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    ol {
+        margin-left: 25px;
+        padding-left: 15px;
+
+        li {
+            margin-bottom: 10px;
+        }
     }
 }
-}
+
 @media (max-width: 768px) {
 
     .section__title-mission-vision {
         font-size: 20px;
     }
 
-    .section-paragraph {
+    .section__paragraph {
         font-size: 12px;
         line-height: 1.5;
     }

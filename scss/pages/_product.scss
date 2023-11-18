@@ -20,9 +20,9 @@
     .title__productForm {
         font-size: 22px;
         width: 340px;
-        text-align: center;
+        text-align: var.$textAlignPrimaryProperty;
     }
 }
 
 
-@media (min-width: 769px) {}
+// @media (min-width: 769px) {}

@@ -5,9 +5,9 @@
     grid-area: footer;
 
     background: rgb(27, 27, 27, .95);
-    text-align: center;
+    text-align: var.$textAlignPrimaryProperty;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: var.$boderRadiusPrimary;
 
     flex-shrink: 0;
 

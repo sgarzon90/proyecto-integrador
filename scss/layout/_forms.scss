@@ -3,11 +3,10 @@
 
 .contact__form {
 
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var.$textShadowBackground;
     width: 100%;
-    border-radius: 10px;
+    border-radius: var.$boderRadiusPrimary;
 
-    // border: 2px groove;
     .contactform {
         display: flex;
         flex-direction: column;
@@ -18,7 +17,7 @@
             width: 100%;
             margin: 5px 0 5px 0;
             padding: 5px;
-            background: rgb(255, 255, 255);
+            background: var.$colorPrimary;
         }
 
     }
@@ -27,12 +26,12 @@
         position: absolute;
         top: 25%;
         right: 10px;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: var.$textShadowBackground;
         transform: translateX(-50%);
-        color: red;
+        color: var.$colorToastText;
         padding: 10px;
         border-radius: 5px;
-        display: none;
+        display: none; 
     }
 
 }
@@ -40,9 +39,8 @@
 .productForm {
 
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    // border: 2px groove;
-    border-radius: 10px;
+    background-color: var.$textShadowBackground;
+    border-radius: var.$boderRadiusPrimary;
 
     .form__group {
         margin-bottom: 20px;
@@ -63,6 +61,10 @@
 
     }
 
+    .form__group--checkbox {
+        margin: 5px 0 10px 0;
+    }
+
     .button__content {
         display: flex;
     }
@@ -75,7 +77,8 @@
         top: 0px;
         right: -200px;
         transform: translateX(-40%);
-        color: red;
+        color: var.$colorToastText;
+
     }
 
     .productForm {

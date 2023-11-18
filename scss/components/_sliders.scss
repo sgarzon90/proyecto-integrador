@@ -24,7 +24,7 @@ $_width: 100%;
         position: absolute;
         font-style: italic;
         text-decoration: underline;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 2px 2px 4px var.$textShadowTitle;
         font-size: 2rem;
     }
 

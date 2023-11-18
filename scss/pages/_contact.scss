@@ -11,13 +11,13 @@
 
     .contact__info {
         width: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 10px;
+        background: var.$textShadowBackground;
+        border-radius: var.$boderRadiusPrimary;
 
-        // border: 2px groove;
+
         .contact__infocontainer {
             padding: 10px;
-            text-align: center;
+            text-align: var.$textAlignPrimaryProperty;
 
             .title__iframe {
                 text-align: left;
@@ -37,7 +37,7 @@
     }
 
     .title {
-        text-align: center;
+        text-align: var.$textAlignPrimaryProperty;
         padding: 5px;
     }
 

@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('productForm');
     const guardarBtn = document.getElementById('guardarBtn');
 
-    form.addEventListener('input', function () {
+   /*  form.addEventListener('input', function () {
         const inputs = form.querySelectorAll('input[required]');
         let isValid = true;
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         guardarBtn.disabled = !isValid;
-    });
+    }); */
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -85,3 +85,4 @@ function showToast(message) {
         toast.style.display = 'none';
     }, 3000);
 }
+
