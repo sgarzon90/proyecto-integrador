@@ -13,8 +13,7 @@
         font-size: 0.80rem;
         border-radius: var.$boderRadiusPrimary;
         color: var.$colorPrimary;
-        background-image: linear-gradient(30deg, var.$colorButtonYellow, var.$colorSecondary);
-        border-color: var.$colorSecondary;
+        background-image: linear-gradient(30deg, var.$colorButtonOrange, var.$colorSecondary);
 
     }
 
@@ -33,7 +32,7 @@
         transition: transform 0.5s, background-color 0.8s;
 
         &:hover {
-            background-image: linear-gradient(20deg, var.$colorButtonYellow, var.$colorSecondary);
+            background-image: linear-gradient(10deg, var.$colorButtonOrange, var.$colorSecondary);
             border-color: var.$colorPrimary;
             transition: transform 0.5s, background-color 0.8s;
             transform: scale(1.02);
@@ -52,14 +51,12 @@
 
         &:hover,
         &:active {
-            // background-image: linear-gradient(125deg, rgb(238, 238, 253), rgb(0, 0, 0), 75%);
-            border-color: var.$colorSecondary;
             transform: scale(1.03);
         }
     }
 
     &--remove {
-        background-image: linear-gradient(20deg, var.$colorButtonYellow, var.$colorSecondary);
+        background-image: linear-gradient(20deg, var.$colorButtonOrange, var.$colorSecondary);
         border-color: var.$colorSecondary;
         color: var.$colorSecondary;
 
@@ -78,9 +75,9 @@
         transition: all 100ms;
         cursor: default;
 
-        &:hover,
+        &:hover,x
         &:active {
-            background-image: linear-gradient(20deg, var.$colorButtonYellow, var.$colorSecondary);
+            background-image: linear-gradient(20deg, var.$colorButtonOrange, var.$colorSecondary);
             border-color: var.$colorSecondary;
         }
     }

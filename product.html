@@ -38,37 +38,41 @@
         <section class="section product">
 
             <h2 class="title title__productForm">Formulario de Producto</h2>
-            <section>
-                <div id="toast" class="toast"></div>
-            </section>
-            <form id="productForm" class="productForm">
 
+           
+
+            <form id="productForm" class="productForm">
+<section>
+    <div id="toast" class="toast"></div>
+</section>
                 <div class="form__group">
                     <label for="name" class="form__label">Nombre:</label>
-                    <input type="text" id="name" name="name" class="form__input form__input--text" required
-                        pattern="[A-Za-z\s]+" title="Ingrese un nombre válido (solo letras y espacios)">
+                    <input type="text" id="name" name="name" class="form__input form__input--text input__validate"
+                        required pattern="[A-Za-z\s]+" title="Ingrese un nombre válido (solo letras y espacios)">
                 </div>
 
                 <div class="form__group">
                     <label for="price" class="form__label">Precio:</label>
-                    <input type="number" id="price" name="price" class="form__input form__input--number" required
-                        min="0">
+                    <input type="number" id="price" name="price" class="form__input form__input--number input__validate"
+                        required min="0">
                 </div>
 
                 <div class="form__group">
                     <label for="stock" class="form__label">Stock:</label>
-                    <input type="number" id="stock" name="stock" class="form__input form__input--number" required
-                        min="0">
+                    <input type="number" id="stock" name="stock" class="form__input form__input--number input__validate"
+                        required min="0">
                 </div>
 
                 <div class="form__group">
                     <label for="brand" class="form__label">Marca:</label>
-                    <input type="text" id="brand" name="brand" class="form__input form__input--text" required>
+                    <input type="text" id="brand" name="brand" class="form__input form__input--text input__validate"
+                        required>
                 </div>
 
                 <div class="form__group">
                     <label for="category" class="form__label">Categoría:</label>
-                    <select id="category" name="category" class="form__input form__input--select" required>
+                    <select id="category" name="category" class="form__input form__input--select input__validate"
+                        required>
                         <option value="" disabled selected>Seleccione una categoría</option>
                         <option value="gorra">Gorra</option>
                         <option value="bolso">Bolso</option>
@@ -78,14 +82,14 @@
 
                 <div class="form__group">
                     <label for="shortDescription" class="form__label">Descripción Corta:</label>
-                    <textarea id="shortDescription" name="shortDescription" class="form__input form__input--textarea"
-                        required></textarea>
+                    <textarea id="shortDescription" name="shortDescription"
+                        class="form__input form__input--textarea input__validate" required></textarea>
                 </div>
 
                 <div class="form__group">
                     <label for="longDescription" class="form__label">Descripción Larga:</label>
-                    <textarea id="longDescription" name="longDescription" class="form__input form__input--textarea"
-                        required></textarea>
+                    <textarea id="longDescription" name="longDescription"
+                        class="form__input form__input--textarea input__validate" required></textarea>
                 </div>
 
                 <div class="form__group--checkbox">

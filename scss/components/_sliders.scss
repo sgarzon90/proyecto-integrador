@@ -12,21 +12,22 @@ $_width: 100%;
     animation: move-slide 18s ease-in-out infinite;
 
 
-    &__one,
+    /* &__one,
     &__two,
     &__three {
-       /*  display: flex;
+        display: flex;
         justify-content: center;
-        align-items: center; */
+        align-items: center;
 
-    }
+    } */
 
     &__title {
         position: absolute;
         font-style: italic;
         text-decoration: underline;
         text-shadow: 2px 2px 4px var.$textShadowTitle;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-left: 10px;
 
         &:hover{
             cursor: pointer;

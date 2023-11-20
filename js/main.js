@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (success) {
             showToast('¡Producto guardado con éxito!');
+            toast.classList.add('toast-success');
             document.getElementById('productForm').reset();
         } else {
             showToast('Error al guardar el producto');

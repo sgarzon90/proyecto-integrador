@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-image: linear-gradient(200deg, var.$ColorBackgroundHeader, var.$colorSecondary, var.$ColorBackgroundHeader 90%);
+    background-image: linear-gradient(210deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 80%);
     /* background-image: url("/images/testbg.jpeg"),
             url("/proyecto-integrador/images/testbg.jpeg"); */
     border-radius: 8px;
@@ -24,7 +24,7 @@
         top: 0px;
         right: 10px;
         z-index: 0;
-        width: 3.5%;
+        width: 3.2%;
 
         &:hover {
             cursor: pointer;
@@ -48,8 +48,7 @@
     .header {
         flex-direction: column;
         align-items: stretch;
-        // background-image: linear-gradient(110deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 95%);
-        background-image: linear-gradient(100deg, var.$ColorBackgroundHeader, var.$colorSecondary, var.$ColorBackgroundHeader 90%);
+        background-image: linear-gradient(250deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 80%);
         /*  background-image: url("/images/testbg.jpeg"),
                 url("/proyecto-integrador/images/testbg.jpeg"); */
         text-align: var.$textAlignPrimaryProperty;
@@ -58,15 +57,15 @@
     .header__title {
         flex-direction: column;
         text-align: var.$textAlignPrimaryProperty;
-        left: 20px;
+        left: 25px;
         bottom: 30px;
-        font-size: 28px;
+        font-size: 25px;
 
     }
 
     .header__logo {
-        width: 20%;
-        height: 95px;
+        width: 28%;
+        height: 90px;
         margin-bottom: 5px;
     }
 

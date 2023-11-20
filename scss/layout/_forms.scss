@@ -20,32 +20,7 @@
             background: var.$colorPrimary;
         }
 
-        .input__error {
-            padding: 0.125em;
-            font-size: 0.65em;
-            color: rgb(200, 10, 10);
-        }
 
-        .input__validate:focus:valid {
-            border: none;
-            outline: 1px solid green;
-        }
-
-        .input__validate:focus:invalid {
-            border: none;
-            outline: 1px solid rgb(200, 10, 10);
-        }
-
-    }
-
-    .toast {
-        color: var.$colorToastText;
-        text-align: var.$textAlignPrimaryProperty;
-        background-color: var.$textShadowBackground;
-    }
-
-    .toast-success {
-        color: var.$colorToastTextSuccess;
     }
 
 }
@@ -84,6 +59,32 @@
         display: flex;
     }
 }
+
+ .input__error {
+     padding: 0.125em;
+     font-size: 0.65em;
+     color: rgb(200, 10, 10);
+ }
+
+ .input__validate:focus:valid {
+     border: none;
+     outline: 1px solid green;
+ }
+
+ .input__validate:focus:invalid {
+     border: none;
+     outline: 1px solid rgb(200, 10, 10);
+ }
+
+  .toast {
+      color: var.$colorToastText;
+      text-align: var.$textAlignPrimaryProperty;
+      background-color: var.$textShadowBackground;
+  }
+
+  .toast-success {
+      color: var.$colorToastTextSuccess;
+  }
 
 @media (max-width: 768px) {
 
