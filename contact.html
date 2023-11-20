@@ -11,13 +11,14 @@
     <title>Punto Oriente - Contacto</title>
     <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
+
 </head>
 
 <body class="contact">
 
     <header class="header">
 
-        <img class="header__logo" src="./images/logo.png" alt="Logo de tienda">
+        <img class="header__logo" src="./images/lg.png" alt="Logo de tienda">
 
         <h1 class="header__title">Punto Oriente</h1>
 
@@ -68,19 +69,24 @@
 
                 <h2 class="title title__contactForm">Formulario de Contacto</h2>
 
+                <section>
+                    <div id="toast" class="toast"></div>
+                </section>
+
                 <form class="contactform" id="contactForm">
 
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+"
+                    <input class="input__validate" type="text" id="name" name="name" required pattern="[A-Za-z\s]+"
                         title="Ingrese un nombre válido (solo letras y espacios)">
 
+
                     <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" class="input__validate" id="email" name="email" required>
+
 
                     <label for="query">Consulta:</label>
-                    <textarea id="query" name="query" rows="4" required></textarea>
+                    <textarea class="input__validate" id="query" name="query" rows="4" required></textarea>
 
-                    <div id="toast" class="toast"></div>
                     <button class="button button--md button--form" type="button" onclick="submitForm()">Enviar
                         Consulta</button>
 

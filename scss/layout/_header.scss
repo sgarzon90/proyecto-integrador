@@ -8,11 +8,14 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    background-image: linear-gradient(120deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 90%);
+    background-image: linear-gradient(200deg, var.$ColorBackgroundHeader, var.$colorSecondary, var.$ColorBackgroundHeader 90%);
+    /* background-image: url("/images/testbg.jpeg"),
+            url("/proyecto-integrador/images/testbg.jpeg"); */
     border-radius: 8px;
 
     &__logo {
         width: 10%;
+        color: white;
     }
 
     &__carrito {
@@ -45,7 +48,10 @@
     .header {
         flex-direction: column;
         align-items: stretch;
-        background-image: linear-gradient(110deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 95%);
+        // background-image: linear-gradient(110deg, var.$colorPrimary, var.$colorSecondary, var.$ColorBackgroundHeader 95%);
+        background-image: linear-gradient(100deg, var.$ColorBackgroundHeader, var.$colorSecondary, var.$ColorBackgroundHeader 90%);
+        /*  background-image: url("/images/testbg.jpeg"),
+                url("/proyecto-integrador/images/testbg.jpeg"); */
         text-align: var.$textAlignPrimaryProperty;
     }
 

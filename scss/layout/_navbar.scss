@@ -9,6 +9,7 @@
         font-size: 1.5rem;
         margin: 0 2vw;
         gap: 0.5vw;
+        text-decoration: underline;
     }
 
     &__item {
@@ -23,10 +24,11 @@
     }
 
     &__item:hover {
-        background: rgb(27, 27, 27, .4);
+        background: rgb(27, 27, 27, .9);
         border-radius: 5px;
         padding: 5px 0;
         transition: background-color 0.3s, color 0.3s;
+       
     }
 
 }

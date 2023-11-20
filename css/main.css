@@ -161,9 +161,9 @@ a:link {
   animation: move-slide 18s ease-in-out infinite;
 }
 .slider__one, .slider__two, .slider__three {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*  display: flex;
+   justify-content: center;
+   align-items: center; */
 }
 .slider__title {
   position: absolute;
@@ -171,6 +171,9 @@ a:link {
   text-decoration: underline;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 2rem;
+}
+.slider__title:hover {
+  cursor: pointer;
 }
 .slider__image {
   width: 100%;
@@ -224,7 +227,6 @@ body {
   text-align: center;
   padding: 15px;
   border-radius: 10px;
-  flex-shrink: 0;
 }
 
 .contact__form {
@@ -244,16 +246,26 @@ body {
   padding: 5px;
   background: rgb(255, 255, 255);
 }
+.contact__form .contactform .input__error {
+  padding: 0.125em;
+  font-size: 0.65em;
+  color: rgb(200, 10, 10);
+}
+.contact__form .contactform .input__validate:focus:valid {
+  border: none;
+  outline: 1px solid green;
+}
+.contact__form .contactform .input__validate:focus:invalid {
+  border: none;
+  outline: 1px solid rgb(200, 10, 10);
+}
 .contact__form .toast {
-  position: absolute;
-  top: 25%;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  transform: translateX(-50%);
   color: rgb(255, 0, 0);
-  padding: 10px;
-  border-radius: 5px;
-  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.contact__form .toast-success {
+  color: rgb(0, 128, 0);
 }
 
 .productForm {
@@ -283,15 +295,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .contact__form .toast {
-    position: relative;
-    top: 0px;
-    right: -200px;
-    transform: translateX(-40%);
-    color: rgb(255, 0, 0);
-  }
   .productForm {
-    width: 90vw;
+    width: 91.5vw;
     margin: 10px;
   }
 }
@@ -301,11 +306,14 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-image: linear-gradient(120deg, rgb(255, 255, 255), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 90%);
+  background-image: linear-gradient(200deg, rgba(255, 255, 0, 0.637), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 90%);
+  /* background-image: url("/images/testbg.jpeg"),
+          url("/proyecto-integrador/images/testbg.jpeg"); */
   border-radius: 8px;
 }
 .header__logo {
   width: 10%;
+  color: white;
 }
 .header__carrito {
   position: absolute;
@@ -329,7 +337,9 @@ body {
   .header {
     flex-direction: column;
     align-items: stretch;
-    background-image: linear-gradient(110deg, rgb(255, 255, 255), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 95%);
+    background-image: linear-gradient(100deg, rgba(255, 255, 0, 0.637), rgb(0, 0, 0), rgba(255, 255, 0, 0.637) 90%);
+    /*  background-image: url("/images/testbg.jpeg"),
+            url("/proyecto-integrador/images/testbg.jpeg"); */
     text-align: center;
   }
   .header__title {
@@ -370,6 +380,24 @@ body {
   text-shadow: rgb(255, 255, 255) 1px 0 5px;
   text-align: center;
 }
+.main .section #search {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;
+}
+.main .section .search-btn {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main .section .search-btn:hover {
+  background-color: #0056b3;
+}
 .main .section--products {
   display: flex;
   flex-wrap: wrap;
@@ -395,6 +423,7 @@ body {
   font-size: 1.5rem;
   margin: 0 2vw;
   gap: 0.5vw;
+  text-decoration: underline;
 }
 .navbar__item {
   color: rgb(255, 255, 255);
@@ -405,7 +434,7 @@ body {
   padding: 5px 0px;
 }
 .navbar__item:hover {
-  background: rgba(27, 27, 27, 0.4);
+  background: rgba(27, 27, 27, 0.9);
   border-radius: 5px;
   padding: 5px 0;
   transition: background-color 0.3s, color 0.3s;
@@ -455,34 +484,37 @@ body {
     line-height: 1.5;
   }
 }
-.main__contact {
+.contact {
+  min-height: 100vh;
+}
+.contact .main__contact {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.5vw;
   height: 100%;
 }
-.main__contact .contact__info {
+.contact .main__contact .contact__info {
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
-.main__contact .contact__info .contact__infocontainer {
+.contact .main__contact .contact__info .contact__infocontainer {
   padding: 10px;
   text-align: center;
 }
-.main__contact .contact__info .contact__infocontainer .title__iframe {
+.contact .main__contact .contact__info .contact__infocontainer .title__iframe {
   text-align: left;
   text-decoration: underline;
   margin-bottom: 10px;
 }
-.main__contact .contact__info .contact__infocontainer .iframe {
+.contact .main__contact .contact__info .contact__infocontainer .iframe {
   border: none;
   width: 80%;
   height: 60vh;
   margin: 0 auto;
 }
-.main__contact .title {
+.contact .main__contact .title {
   text-align: center;
   padding: 5px;
 }

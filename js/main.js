@@ -1,3 +1,5 @@
+const toast = document.getElementById('toast');
+
 function sumar(cardId) {
     let counterElement = document.getElementById('counter-' + cardId);
     let removeButton = document.querySelector('#product' + cardId + ' .button--remove');
@@ -39,27 +41,15 @@ function submitForm() {
         showToast('Por favor, ingresa un correo electrónico válido.');
     } else {
         showToast('Consulta enviada con éxito!');
+        toast.classList.add('toast-success');
         document.getElementById('contactForm').reset();
     }
-}
 
+}
+ 
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('productForm');
-    const guardarBtn = document.getElementById('guardarBtn');
-
-   /*  form.addEventListener('input', function () {
-        const inputs = form.querySelectorAll('input[required]');
-        let isValid = true;
-
-        inputs.forEach(function (input) {
-            if (!input.checkValidity()) {
-                isValid = false;
-            }
-        });
-
-        guardarBtn.disabled = !isValid;
-    }); */
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -77,12 +67,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function showToast(message) {
-    const toast = document.getElementById('toast');
+
     toast.textContent = message;
     toast.style.display = 'block';
 
     setTimeout(() => {
         toast.style.display = 'none';
+        toast.classList.remove('toast-success');
     }, 3000);
 }
-

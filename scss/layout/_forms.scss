@@ -20,21 +20,36 @@
             background: var.$colorPrimary;
         }
 
+        .input__error {
+            padding: 0.125em;
+            font-size: 0.65em;
+            color: rgb(200, 10, 10);
+        }
+
+        .input__validate:focus:valid {
+            border: none;
+            outline: 1px solid green;
+        }
+
+        .input__validate:focus:invalid {
+            border: none;
+            outline: 1px solid rgb(200, 10, 10);
+        }
+
     }
 
     .toast {
-        position: absolute;
-        top: 25%;
-        right: 10px;
-        background-color: var.$textShadowBackground;
-        transform: translateX(-50%);
         color: var.$colorToastText;
-        padding: 10px;
-        border-radius: 5px;
-        display: none; 
+        text-align: var.$textAlignPrimaryProperty;
+        background-color: var.$textShadowBackground;
+    }
+
+    .toast-success {
+        color: var.$colorToastTextSuccess;
     }
 
 }
+
 
 .productForm {
 
@@ -72,17 +87,8 @@
 
 @media (max-width: 768px) {
 
-    .contact__form .toast {
-        position: relative;
-        top: 0px;
-        right: -200px;
-        transform: translateX(-40%);
-        color: var.$colorToastText;
-
-    }
-
     .productForm {
-        width: 90vw;
+        width: 91.5vw;
         margin: 10px;
     }
 
