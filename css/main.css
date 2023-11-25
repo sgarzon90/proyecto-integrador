@@ -117,7 +117,7 @@ a:link {
   margin: 15px 0;
 }
 .card__title {
-  font-size: 20px;
+  font-size: 18px;
 }
 .card__price::before {
   content: "Precio: $ ";
@@ -314,14 +314,11 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-image: linear-gradient(210deg, rgb(255, 255, 255), rgb(0, 0, 0), rgb(255, 165, 0) 80%);
-  /* background-image: url("/images/testbg.jpeg"),
-          url("/proyecto-integrador/images/testbg.jpeg"); */
+  background: linear-gradient(to bottom, #f5f5f5, #ccc);
   border-radius: 8px;
 }
 .header__logo {
   width: 10%;
-  color: white;
 }
 .header__carrito {
   position: absolute;
@@ -336,18 +333,17 @@ body {
 .header__title {
   flex-grow: 1;
   text-align: center;
+  text-shadow: 2px 2px rgb(255, 255, 255);
   font-size: 3.5vw;
   position: relative;
   z-index: 1;
+  color: rgb(0, 0, 0);
 }
 
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: stretch;
-    background-image: linear-gradient(250deg, rgb(255, 255, 255), rgb(0, 0, 0), rgb(255, 165, 0) 80%);
-    /*  background-image: url("/images/testbg.jpeg"),
-            url("/proyecto-integrador/images/testbg.jpeg"); */
     text-align: center;
   }
   .header__title {
@@ -358,8 +354,8 @@ body {
     font-size: 25px;
   }
   .header__logo {
-    width: 28%;
-    height: 90px;
+    width: 30%;
+    height: 110px;
     margin-bottom: 5px;
   }
   .header__carrito {
@@ -384,7 +380,7 @@ body {
 }
 .main .section__title {
   font-size: 3vw;
-  text-shadow: rgb(255, 255, 255) 1px 0 5px;
+  text-shadow: rgb(0, 0, 0) 1px 0 5px;
   text-align: center;
 }
 .main .section #search {
@@ -428,20 +424,23 @@ body {
 .navbar__menu {
   display: flex;
   font-size: 1.5rem;
+  font-weight: bold;
   margin: 0 2vw;
   gap: 0.5vw;
   text-decoration: underline;
+  color: rgb(0, 0, 0);
 }
 .navbar__item {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px rgb(255, 255, 255);
 }
 .navbar__item--active {
-  background: rgba(27, 27, 27, 0.5);
+  background: rgba(168, 166, 166, 0.993);
   border-radius: 5px;
   padding: 5px 0px;
 }
 .navbar__item:hover {
-  background: rgba(27, 27, 27, 0.9);
+  background: rgba(168, 166, 166, 0.97);
   border-radius: 5px;
   padding: 5px 0;
   transition: background-color 0.3s, color 0.3s;
@@ -469,6 +468,12 @@ body {
   padding: 10px;
   font-size: 1rem;
 }
+.about .image__about {
+  float: left;
+  width: 25vw;
+  height: 35vh;
+  margin: 30px;
+}
 .about ol {
   margin-left: 25px;
   padding-left: 15px;
@@ -478,6 +483,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .section__mission-vision {
+    display: flex;
+    flex-direction: column;
+  }
+  .section__mission-vision .image__about {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
   .section__title-mission-vision {
     font-size: 20px;
   }

@@ -7,28 +7,31 @@
     &__menu {
         display: flex;
         font-size: 1.5rem;
+        font-weight: bold;
         margin: 0 2vw;
         gap: 0.5vw;
         text-decoration: underline;
+        color: var.$colorSecondary;
+
     }
 
     &__item {
-        color: var.$colorPrimary;
+        color: var.$colorSecondary;
+        text-shadow: 1px 1px var.$colorPrimary;
     }
 
 
     &__item--active {
-        background: rgb(27, 27, 27, .5);
+        background: rgba(168, 166, 166, 0.993);
         border-radius: 5px;
         padding: 5px 0px;
     }
 
     &__item:hover {
-        background: rgb(27, 27, 27, .9);
+        background: rgba(168, 166, 166, 0.970);
         border-radius: 5px;
         padding: 5px 0;
         transition: background-color 0.3s, color 0.3s;
-       
     }
 
 }

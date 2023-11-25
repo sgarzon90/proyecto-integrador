@@ -77,3 +77,21 @@ function showToast(message) {
         toast.classList.remove('toast-success');
     }, 3000);
 }
+
+
+function searchProducts() {
+
+    const searchTerm = document.getElementById("search").value.toLowerCase();
+    const productCards = document.querySelectorAll('.card--product');
+
+    productCards.forEach(function (card) {
+        const title = card.querySelector('.card__title').innerText.toLowerCase();
+        const description = card.querySelector('.card__description').innerText.toLowerCase();
+
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}

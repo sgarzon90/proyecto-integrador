@@ -19,6 +19,13 @@
         font-size: 1rem;
     }
 
+    .image__about {
+        float: left;
+        width: 25vw;
+        height: 35vh;
+        margin: 30px;
+    }
+
     ol {
         margin-left: 25px;
         padding-left: 15px;
@@ -30,6 +37,17 @@
 }
 
 @media (max-width: 768px) {
+
+    .section__mission-vision {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section__mission-vision .image__about {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
 
     .section__title-mission-vision {
         font-size: 20px;
@@ -45,4 +63,5 @@
         font-size: 15px;
         line-height: 1.3;
     }
+
 }
