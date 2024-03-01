@@ -8,7 +8,7 @@ import { IT_IS_OFF } from "../../constanst/general.js";
 import ProductSearch from "../../components/productSearch/ProductSearch";
 import ProductCard from "../../components/productCard/ProductCard";
 import ProductCreateCard from "../../components/productCreateCard/ProductCreateCard.jsx";
-import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
 
 const Home = () => {
     const [ products, setProducts ] = useState([]);

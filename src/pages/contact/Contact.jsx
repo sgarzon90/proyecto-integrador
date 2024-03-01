@@ -8,7 +8,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 
-import InputField from "../../components/form/inputField/InputField";
+import InputField from "../../components/form/inputField/InputField.jsx";
 import Button from "../../components/button/Button";
 import Alert from "../../components/alert/Alert";
 

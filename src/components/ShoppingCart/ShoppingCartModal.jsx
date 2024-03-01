@@ -2,10 +2,11 @@ import PropTypes from "prop-types";
 import { Drawer, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Box, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
-import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
 import { useContext, useState } from "react";
-import "./ShoppingCartModal.scss";
-import Alert from "../../components/alert/Alert.jsx";
+import Alert from "../alert/Alert.jsx";
+
+import "./shoppingCartModal.scss";
 
 const ShoppingCartModal = ({ isOpen, onClose }) => {
     const { shoppingCart, removeProductFromCart, processShoppingCart, cancelShoppingCart } = useContext(ShoppingCartContext);

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useContext, useState, useEffect } from "react"; // Importar useState
-import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
 import { Box, Card, CardActions, CardContent, CardMedia, IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
 import "./productCard.scss";
@@ -13,7 +13,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { NavLink } from "react-router-dom";
-// import useProducts from "../../hooks/useProducts";
 
 const ProductCard = ({ product, itIsOff, onCardDelete }) => {
     const { addProductCart, removeProduct, getProductCart, removeProductFromCart } = useContext(ShoppingCartContext);

@@ -12,14 +12,13 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { ShoppingCartContext } from "../../../contexts/ShoppingCartContext.jsx";
-import ShoppingCartModal from "../../../components/ShoppingCart/ShoppingCartModal.jsx";
+import ShoppingCartModal from "../../shoppingCart/ShoppingCartModal.jsx";
 import "./navbar.scss";
 
 import links from "../../../links/links";
-
-import MenuIcon from "@mui/icons-material/Menu";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Navbar = () => {
     const { shoppingCart } = useContext(ShoppingCartContext);
