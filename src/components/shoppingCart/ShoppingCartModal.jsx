@@ -129,4 +129,4 @@ ShoppingCartModal.propTypes = {
     onClose: PropTypes.func.isRequired,
 };
 
-export default ShoppingCartModal;
+export { ShoppingCartModal };
