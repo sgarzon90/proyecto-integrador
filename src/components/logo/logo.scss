@@ -1,0 +1,11 @@
+.logo {
+    img {
+        height: 5rem;
+        width: 100px;
+        background-color: white;
+    }
+
+    @media (max-width: 650px) {
+        display: none;
+    }
+}

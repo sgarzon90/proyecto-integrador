@@ -1,0 +1,66 @@
+@use "../../../styles/scss/variables" as var;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0.25rem 0.75rem 0 0.75rem;
+    background-color: var.$colorBorderDarker;
+    box-shadow: 0 0.10rem 0.4rem var.$colorFontLight;
+
+    &__drawer-icon {
+        svg {
+            fill: var.$colorBackgroundLight;
+        }
+    }
+
+    &__items {
+        a {
+            color: var.$colorFontLight;
+        }
+
+        .active {
+            color: var.$colorFontDarker;
+            // text-shadow: 0.125rem 0.125rem 0.5rem var.$colorBorderDarker;
+            background-color: var.$colorBackgroundLight;
+
+        }
+    }
+
+    &__shopping-cart {
+
+        .css-i4bv87-MuiSvgIcon-root {
+            fill: white;
+        }
+
+        &__icon-badge {
+            svg {
+                font-size: 1.4rem;
+                fill: var.$colorBackgroundLight;
+            }
+
+            span {
+                color: var.$colorBackgroundLight;
+                background-color: var.$colorBackgroundDarker;
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        &__items {
+            display: none;
+        }
+    }
+
+    @media (min-width: 651px) {
+        &__drawer-icon {
+            display: none;
+        }
+    }
+}
+
+.active {
+    background-color: var.$colorBackgroundLight;
+}
