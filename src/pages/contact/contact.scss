@@ -14,6 +14,7 @@
 
     &__section {
         &__form {
+
             display: flex;
             flex-direction: column;
             gap: 1.5vh;
@@ -44,12 +45,35 @@
     }
 
     @media (max-width: 650px) {
+
         grid-template-columns: 1fr;
 
         &__section {
+            margin: 10px;
+            font-size: 0.9em;
+
+            .contact__section__form input {
+                padding: 0.5rem;
+                font-size: 1rem;
+                border: 3px solid var.$colorBorderLight;
+                border-radius: 0.25rem;
+            }
+
+            &__data {
+                div {
+                    font-size: 1em;
+                }
+            }
+
             &__map {
                 margin-top: 2vw;
             }
+
+            .MuiSvgIcon-root {
+                font-size: 1.6em;
+            }
         }
+
+
     }
 }

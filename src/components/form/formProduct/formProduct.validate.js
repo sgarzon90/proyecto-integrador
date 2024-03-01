@@ -4,10 +4,10 @@ import {
     MESSAGE_REQUIRED,
     MESSAGE_PRICE_INVALID,
     MESSAGE_STOCK_INVALID,
-    MESSAGE_IMAGE_PATH_INVALID,
+    // MESSAGE_IMAGE_PATH_INVALID,
     REGEX_PRICE,
     REGEX_STOCK,
-    REGEX_IMAGE_PATH,
+    // REGEX_IMAGE_PATH,
 } from "../../../constanst/regexPattern.js";
 
 const validationSchema = yup.object({
@@ -24,11 +24,9 @@ const validationSchema = yup.object({
         .matches(REGEX_STOCK, MESSAGE_STOCK_INVALID)
         .required(MESSAGE_REQUIRED),
     description: yup
-        .string("Ingresa tu consulta")
-        .min(15, "Ingresa una consulta que tenga entre 15 y 150 carateres"),
-    image: yup
-        .string("Ingresa el stock")
-        .matches(REGEX_IMAGE_PATH, MESSAGE_IMAGE_PATH_INVALID)
+        .string("Ingresa la descripción")
+        .min(15, "Ingresa una descripción que tenga entre 15 y 150 caracteres")
+        .max(150, "Ingresa una descripción que tenga entre 15 y 150 caracteres")
         .required(MESSAGE_REQUIRED),
 });
 

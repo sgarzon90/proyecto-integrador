@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import {
     Badge,
@@ -12,6 +12,8 @@ import {
     ListItemIcon,
     ListItemText,
 } from "@mui/material";
+import { ShoppingCartContext } from "../../../contexts/ShoppingCartContext.jsx";
+import ShoppingCartModal from "../../../components/ShoppingCart/ShoppingCartModal.jsx";
 import "./navbar.scss";
 
 import links from "../../../links/links";
@@ -20,7 +22,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Navbar = () => {
+    const { shoppingCart } = useContext(ShoppingCartContext);
+
+    const totalProductsInCart = Array.isArray(shoppingCart) ? shoppingCart.reduce((total, product) => total + product.amount, 0) : 0;
+
     const [ openDrawer, setOpenDrawer ] = useState(false);
+    const [ openShoppingCartModal, setOpenShoppingCartModal ] = useState(false);
 
     const handleOnClickOpenDrawer = () => {
         setOpenDrawer(true);
@@ -30,11 +37,18 @@ const Navbar = () => {
         setOpenDrawer(false);
     };
 
+    const handleOpenShoppingCartModal = () => {
+        setOpenShoppingCartModal(true);
+    };
+
+    const handleCloseShoppingCartModal = () => {
+        setOpenShoppingCartModal(false);
+    };
+
     return (
         <Box
             component="nav"
             className="navbar">
-
             <Box className="navbar__drawer-icon">
                 <MenuIcon onClick={handleOnClickOpenDrawer}/>
             </Box>
@@ -51,11 +65,14 @@ const Navbar = () => {
             </Box>
 
             <Box className="navbar__shopping-cart">
-                <IconButton>
+                <IconButton
+                    onClick={handleOpenShoppingCartModal}
+                >
                     <Badge
-                        className="navbar__shopping-cart__icon-badge"
-                        badgeContent={10}>
-                        <ShoppingCartOutlinedIcon/>
+                        badgeContent={totalProductsInCart > 99 ? "99+" : totalProductsInCart}
+                        color="primary"
+                        max={99}>
+                        <ShoppingCartOutlinedIcon className="carrito"/>
                     </Badge>
                 </IconButton>
             </Box>
@@ -70,16 +87,19 @@ const Navbar = () => {
                             key={index}
                             component={NavLink}
                             to={link.url}>
-                            <ListItemButton
-                                onClick={handleOnClickCloseDrawer}>
+                            <ListItemButton onClick={handleOnClickCloseDrawer}>
                                 <ListItemIcon>{link.icon}</ListItemIcon>
                                 <ListItemText>{link.title}</ListItemText>
                             </ListItemButton>
                         </ListItem>
                     ))}
                 </List>
-
             </Drawer>
+
+            {/* Renderiza el modal del carrito de compras */}
+            <ShoppingCartModal
+                isOpen={openShoppingCartModal}
+                onClose={handleCloseShoppingCartModal}/>
         </Box>
     );
 };

@@ -10,11 +10,13 @@ $_width: 100%;
 
     width: $_width;
     padding: 0.5vw;
+    background-color: #e8e8e8 !important;
 
     &__floats {
         position: relative;
 
         div {
+
             position: absolute;
             top: 1.5rem;
             right: 0.5rem;
@@ -51,6 +53,7 @@ $_width: 100%;
     }
 
     &__content {
+
         display: flex;
         flex-direction: column;
         gap: 0.75vw;
@@ -70,6 +73,21 @@ $_width: 100%;
                 font-weight: bold;
             }
         }
+
+        .OutofStock {
+            text-align: center;
+            font-weight: bold;
+            color: var.$colorFontBasic;
+        }
+
+        .promotion__price {
+            color: var.$colorFontBasic;
+            font-weight: bold;
+            font-style: italic;
+            text-transform: capitalize;
+            text-decoration: underline
+        }
+
 
         :last-child {
             margin-top: auto;

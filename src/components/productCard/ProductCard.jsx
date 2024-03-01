@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
+import { useContext, useState, useEffect } from "react"; // Importar useState
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
 import { Box, Card, CardActions, CardContent, CardMedia, IconButton } from "@mui/material";
+import { Typography } from "@mui/material";
 import "./productCard.scss";
 
 import Button from "../button/Button";
@@ -10,24 +13,42 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 import { NavLink } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
-import { useEffect } from "react";
-import { useContext } from "react";
-import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
+// import useProducts from "../../hooks/useProducts";
 
-const ProductCard = (props) => {
-    const { product, setProducts, itIsOff } = props;
-    const { products, removeProduct } = useProducts();
-    const { addProductCart } = useContext(ShoppingCartContext);
+const ProductCard = ({ product, itIsOff, onCardDelete }) => {
+    const { addProductCart, removeProduct, getProductCart, removeProductFromCart } = useContext(ShoppingCartContext);
+    const [ quantity, setQuantity ] = useState(0);
 
     useEffect(() => {
-        if (products?.length > 0) {
-            setProducts(products);
+        const productInCart = getProductCart(product.id);
+        setQuantity(productInCart ? productInCart.amount : 0);
+    }, [ getProductCart, product.id ]);
+
+    const handleAddProduct = () => {
+        if (quantity < product.stock) {
+            setQuantity(quantity + 1);
+            addProductCart(product);
+        } else {
+            console.log("No se puede agregar más productos, stock agotado.");
         }
-    }, [products]);
+    };
+
+    const handleRemoveProduct = () => {
+        if (quantity > 0) {
+            setQuantity(quantity - 1);
+            removeProduct(product.id);
+        }
+    };
+
+    const handleCardDelete = () => {
+        onCardDelete(product.id);
+        removeProductFromCart(product.id);
+    };
 
     return (
-        <Card className="product-card">
+        <Card
+            key={product.id}
+            className="product-card">
             <Box className="product-card__floats">
                 <Box>
                     <IconButton
@@ -36,7 +57,7 @@ const ProductCard = (props) => {
                         state={{ product }}>
                         <EditIcon/>
                     </IconButton>
-                    <IconButton onClick={() => removeProduct(product.id)}><DeleteIcon/></IconButton>
+                    <IconButton onClick={handleCardDelete}><DeleteIcon/></IconButton>
                 </Box>
             </Box>
             <CardMedia
@@ -46,15 +67,29 @@ const ProductCard = (props) => {
                 alt={`Fotografía de ${product.name}`}/>
             <CardContent className="product-card__content">
                 <h4>{product.name}</h4>
-                <p><span>Ingredientes:</span> {`${product.description}`}</p>
+                <p><span>Descripción:</span> {product.description}</p>
                 {!product.isPromotion && <p><span>Precio:</span> {`${product.price}`}</p>}
-                {product.isPromotion && <p><span>Precio promocional:</span> {`${product.price - (product.price / 100 * itIsOff )}`}</p>}
+                {product.isPromotion && <p className="promotion__price"><span>Precio promocional:</span> {`${product.price - (product.price / 100 * itIsOff)}`}</p>}
+                <p><span>Unidades disponibles:</span> {product.stock}</p>
+                {product.stock > 0 ? (
+                    <CardActions className="product-card__actions">
+                        <Button
+                            color="danger"
+                            onClick={handleRemoveProduct}><RemoveIcon/></Button>
+                        <span>{quantity}</span>
+                        <Button
+                            onClick={handleAddProduct}
+                            disabled={product.stock === 0}><AddIcon/></Button>
+                    </CardActions>
+                ) : (
+                    <Typography
+                        variant="body2"
+                        color="error"
+                        className="OutofStock">
+                    SIN STOCK
+                    </Typography>
+                )}
             </CardContent>
-            <CardActions className="product-card__actions">
-                <Button color="danger"><RemoveIcon/></Button>
-                <span>0</span>
-                <Button onClick={() => addProductCart(product)}><AddIcon/></Button>
-            </CardActions>
         </Card>
     );
 };
@@ -69,8 +104,8 @@ ProductCard.propTypes = {
         price: PropTypes.number.isRequired,
         isPromotion: PropTypes.bool.isRequired,
     }),
-    setProducts: PropTypes.func.isRequired,
     itIsOff: PropTypes.number,
+    onCardDelete: PropTypes.func.isRequired,
 };
 
 ProductCard.defaultProps = {

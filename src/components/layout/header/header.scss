@@ -4,7 +4,7 @@
     grid-area: header;
 
     background-image:
-        linear-gradient(75deg, rgba(0, 0, 0, 0.75), transparent, rgba(0, 0, 0, 0.75)),
+        linear-gradient(100deg, rgba(0, 0, 0, 0.75), transparent, rgba(0, 0, 0, 0.90)),
         url("/images/layout/header.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,15 +21,27 @@
 
 
         &__title {
-            color: var.$colorFontLight;
+            color: white;
             font-size: 4rem;
             font-family: "Super Plants";
-
-            &--color {
-                color: var.$colorBackgroundDark;
-                -webkit-text-stroke: 0.25rem var.$colorFontLight;
-            }
         }
     }
+
+    @media (max-width: 650px) {
+
+        .header__group__title {
+            font-size: 2rem;
+        }
+
+    }
+
+    @media (min-width: 550px) {
+
+        .header__group__title {
+            font-size: 3rem;
+        }
+
+    }
+
 
 }

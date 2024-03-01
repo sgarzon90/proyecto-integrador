@@ -9,7 +9,7 @@
 
     width: 100%;
     padding: 1rem 0;
-    background-color: var.$colorBackgroundDark;
+    background-color: black;
     box-shadow: 0 -0.125rem 0.75rem rgba(var.$colorBackgroundDarker, 0.25);
 
     &__groups {
@@ -22,12 +22,12 @@
 
         &__title {
             color: var.$colorFontLight;
-            font-size: var.$fontSizeMD;
+            font-size: 1rem;
         }
 
         &__list {
             padding-top: 0.25rem;
-            font-size: var.$fontSizeSM;
+            font-size: 0.875rem;
 
             &--explorer,
             &--legal {
@@ -55,7 +55,7 @@
                     fill: var.$colorFontLight;
 
                     &:hover {
-                        background-color: var.$colorBackgroundDarker;
+                        background-color: var.$colorBackgroundBlackLight;
                     }
                 }
             }

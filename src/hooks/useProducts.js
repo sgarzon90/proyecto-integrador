@@ -1,43 +1,32 @@
 import useLocalStorage from "./useLocalStorage.js";
-
-import { pizzas } from "../data/data.js";
+import { gallery } from "../data/data.js";
 
 const useProducts = () => {
-    const { items, setItem } = useLocalStorage({ products: pizzas });
+    const { items, setItem } = useLocalStorage({ products: gallery });
 
     const normalizeValue = (value = "") => {
-        return value
-            .toLowerCase()
-            .trim()
-            .replace("á", "a")
-            .replace("é", "e")
-            .replace("í", "i")
-            .replace("ó", "o")
-            .replace("ú", "u");
+        return value.toLowerCase().trim().replace(/[áéíóú]/g, (match) => {
+            return {
+                "á": "a",
+                "é": "e",
+                "í": "i",
+                "ó": "o",
+                "ú": "u",
+            }[match];
+        });
     };
 
     const searchProducts = (text) => {
         const preparedText = normalizeValue(text);
 
-        return items.products.filter((pizza) => {
-            const preparedPizza = normalizeValue(pizza.name);
-
-            if (preparedText.length === 0 || preparedPizza.includes(preparedText)) {
-                return pizza;
-            }
+        return items.products.filter((product) => {
+            const preparedName = normalizeValue(product.name);
+            return preparedText.length === 0 || preparedName.includes(preparedText);
         });
     };
 
     const generateId = () => {
-        let maxId = 0;
-
-        items.products.forEach((item) => {
-            if (item.id > maxId) {
-                maxId = item.id;
-            }
-        });
-
-        return maxId + 1;
+        return items.products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
     };
 
     const createSchema = (values) => {
@@ -53,19 +42,26 @@ const useProducts = () => {
     };
 
     const createProduct = (values) => {
-        setItem("products", [ ...items.products, createSchema(values) ]);
+        const newProduct = createSchema(values);
+        const newProducts = [ ...items.products, newProduct ];
+        setItem("products", newProducts);
     };
 
     const updateProduct = (values) => {
-        const index = items.products.findIndex((item) => item.id === values.id);
-        const products = items.products.toSpliced(index, 1, createSchema(values));
-        setItem("products", products);
+        const updatedProducts = items.products.map((product) =>
+            product.id === values.id ? createSchema(values) : product,
+        );
+        setItem("products", updatedProducts);
     };
 
     const removeProduct = (id) => {
-        const productsWithoutthisProduct = items.products.filter((item) => item.id != id);
-        console.log(id);
-        setItem("products", productsWithoutthisProduct);
+        const productsWithoutThisProduct = items.products.filter((product) => product.id !== id);
+        setItem("products", productsWithoutThisProduct);
+    };
+
+    // Función para obtener un producto por su ID
+    const getProductById = (id) => {
+        return items.products.find((product) => product.id === id);
     };
 
     return {
@@ -74,6 +70,8 @@ const useProducts = () => {
         createProduct,
         updateProduct,
         removeProduct,
+        getProductById,
+
     };
 };
 

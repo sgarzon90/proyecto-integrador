@@ -7,32 +7,71 @@ const About = () => {
             <Box
                 component="section"
                 className="about__section">
-                <h3>Misión</h3>
                 <img
-                    src="/images/about/mision.png"
-                    alt="Fotrografía de la misión de la empresa"/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore totam, nulla repellendus minima explicabo porro similique molestiae, officiis optio eos dolorem ipsum aspernatur consequuntur! Inventore aliquam beatae facere quod, vero cupiditate deleniti, laudantium dicta aperiam libero necessitatibus aspernatur consequuntur animi maiores repudiandae? Repudiandae distinctio exercitationem vel nobis, incidunt, ad odio possimus sunt, voluptatibus eligendi error ullam esse laudantium ex. Error expedita adipisci fugiat veniam quibusdam modi quis labore, blanditiis quos, rerum nobis, esse voluptate odio ad est delectus cum tempora facilis. Fuga perspiciatis odio tempore facere explicabo fugit pariatur porro quos atque! Commodi dicta, animi quam atque quod magni praesentium hic suscipit ratione accusamus quibusdam tempora at, odit aut dolor, impedit harum cum corporis eos! Quasi dolor magnam soluta pariatur distinctio modi consequuntur necessitatibus. Ut, dolorum illum! Dolor praesentium fugiat, fuga quia temporibus officiis ratione sint inventore, eos sunt asperiores quis architecto nihil vel aspernatur dolorum perspiciatis et totam. Maiores repudiandae a, reprehenderit eligendi ab distinctio laudantium saepe, iste perferendis totam nulla, provident minima corporis quibusdam et nemo? Voluptatum explicabo deserunt numquam nostrum autem harum omnis ipsa. Tenetur sequi quibusdam temporibus animi sed nulla odit, similique corporis. Et, pariatur repellat fugiat voluptatem, aperiam aliquid ullam cum dolore fugit necessitatibus sed esse, perferendis dicta? Rem ipsum neque maxime temporibus, reiciendis aliquam cum officia blanditiis ea cumque, fugit incidunt repellat eius aperiam soluta. Suscipit facere sequi molestiae ex qui necessitatibus quibusdam corporis illum, voluptatem vel nostrum autem ipsam. Numquam ipsa vitae aliquam! Harum inventore quod, nesciunt eaque itaque laborum quia repudiandae quidem accusamus quo voluptatem assumenda sed fugit deleniti, autem explicabo architecto quaerat maiores, nihil reiciendis tenetur. Dolor, fugiat. Iste, atque quam? Facere repellat aperiam blanditiis praesentium minima dolor vitae fugit veritatis obcaecati. Facilis vero laudantium quae, fuga alias animi laborum velit quidem in nisi cum impedit odio dolorum atque deleniti repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore totam, nulla repellendus minima explicabo porro similique molestiae, officiis optio eos dolorem ipsum aspernatur consequuntur! Inventore aliquam beatae facere quod, vero cupiditate deleniti, laudantium dicta aperiam libero necessitatibus aspernatur consequuntur animi maiores repudiandae? Repudiandae distinctio exercitationem vel nobis, incidunt, ad odio possimus sunt, voluptatibus eligendi error ullam esse laudantium ex. Error expedita adipisci fugiat veniam quibusdam modi quis labore, blanditiis quos, rerum nobis, esse voluptate odio ad est delectus cum tempora facilis. Fuga perspiciatis odio tempore facere explicabo fugit pariatur porro quos atque! Commodi dicta, animi quam atque quod magni praesentium hic suscipit ratione accusamus quibusdam tempora at, odit aut dolor, impedit harum cum corporis eos! Quasi dolor magnam soluta pariatur distinctio modi consequuntur necessitatibus. Ut, dolorum illum! Dolor praesentium fugiat, fuga quia temporibus officiis ratione sint inventore, eos sunt asperiores quis architecto nihil vel aspernatur dolorum perspiciatis et totam. Maiores repudiandae a, reprehenderit eligendi ab distinctio laudantium saepe, iste perferendis totam nulla, provident minima corporis quibusdam et nemo? Voluptatum explicabo deserunt numquam nostrum autem harum omnis ipsa. Tenetur sequi quibusdam temporibus animi sed nulla odit, similique corporis. Et, pariatur repellat fugiat voluptatem, aperiam aliquid ullam cum dolore fugit necessitatibus sed esse, perferendis dicta? Rem ipsum neque maxime temporibus, reiciendis aliquam cum officia blanditiis ea cumque, fugit incidunt repellat eius aperiam soluta. Suscipit facere sequi molestiae ex qui necessitatibus quibusdam corporis illum, voluptatem vel nostrum autem ipsam. Numquam ipsa vitae aliquam! Harum inventore quod, nesciunt eaque itaque laborum quia repudiandae quidem accusamus quo voluptatem assumenda sed fugit deleniti, autem explicabo architecto quaerat maiores, nihil reiciendis tenetur. Dolor, fugiat. Iste, atque quam? Facere repellat aperiam blanditiis praesentium minima dolor vitae fugit veritatis obcaecati. Facilis vero laudantium quae, fuga alias animi laborum velit quidem in nisi cum impedit odio dolorum atque deleniti repellendus!</p>
+                    src="/images/about/capm&v.jpg"
+                    alt="Fotrografía misión-visión"/>
+                <h3>Misión</h3>
+                <p className="about__paragraph--mision">Nuestra misión en Punto Oriente es ofrecer a nuestros
+                clientes la más amplia y
+                atractiva variedad de gorras,
+                reflejando las últimas tendencias de la moda y la más alta calidad. Nos esforzamos por ser el destino
+                preferido de
+                aquellos que buscan expresar su estilo único a través de accesorios de moda, centrándonos en la
+                innovación, la
+                satisfacción del cliente y la integridad en cada paso de nuestro proceso.
+                En Punto Oriente, estamos comprometidos con:
+                </p>
+                <ol>
+                    <li>Variedad Excepcional: proporcionar una selección única de gorras que abarque desde estilos clásicos
+                    hasta las últimas
+                    tendencias de diseño, para satisfacer los gustos diversos de nuestros clientes.
+                    </li>
+                    <li>Calidad Inigualable: garantizar que cada gorra que vendemos cumple con los más altos estándares de
+                    calidad, utilizando
+                    materiales duraderos y técnicas de fabricación avanzadas.</li>
+                    <li>Experiencia del Cliente: ofrecer un servicio al cliente excepcional, desde el momento de la
+                    selección hasta la entrega,
+                    asegurándonos de que cada cliente se sienta valorado y satisfecho con su compra.</li>
+                    <li>Responsabilidad Social y Ambiental: contribuir positivamente a la comunidad y al medio ambiente,
+                    tomando medidas éticas
+                    en la producción y participando en iniciativas sociales que promuevan el bienestar general.</li>
+                </ol>
             </Box>
 
             <Box
                 component="section"
                 className="about__section about__section--vision">
                 <h3>Visión</h3>
-                <img
-                    src="/images/about/vision.png"
-                    alt="Fotrografía de la visión de la empresa"/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore totam, nulla repellendus minima explicabo porro similique molestiae, officiis optio eos dolorem ipsum aspernatur consequuntur! Inventore aliquam beatae facere quod, vero cupiditate deleniti, laudantium dicta aperiam libero necessitatibus aspernatur consequuntur animi maiores repudiandae? Repudiandae distinctio exercitationem vel nobis, incidunt, ad odio possimus sunt, voluptatibus eligendi error ullam esse laudantium ex. Error expedita adipisci fugiat veniam quibusdam modi quis labore, blanditiis quos, rerum nobis, esse voluptate odio ad est delectus cum tempora facilis. Fuga perspiciatis odio tempore facere explicabo fugit pariatur porro quos atque! Commodi dicta, animi quam atque quod magni praesentium hic suscipit ratione accusamus quibusdam tempora at, odit aut dolor, impedit harum cum corporis eos! Quasi dolor magnam soluta pariatur distinctio modi consequuntur necessitatibus. Ut, dolorum illum! Dolor praesentium fugiat, fuga quia temporibus officiis ratione sint inventore, eos sunt asperiores quis architecto nihil vel aspernatur dolorum perspiciatis et totam. Maiores repudiandae a, reprehenderit eligendi ab distinctio laudantium saepe, iste perferendis totam nulla, provident minima corporis quibusdam et nemo? Voluptatum explicabo deserunt numquam nostrum autem harum omnis ipsa. Tenetur sequi quibusdam temporibus animi sed nulla odit, similique corporis. Et, pariatur repellat fugiat voluptatem, aperiam aliquid ullam cum dolore fugit necessitatibus sed esse, perferendis dicta? Rem ipsum neque maxime temporibus, reiciendis aliquam cum officia blanditiis ea cumque, fugit incidunt repellat eius aperiam soluta. Suscipit facere sequi molestiae ex qui necessitatibus quibusdam corporis illum, voluptatem vel nostrum autem ipsam. Numquam ipsa vitae aliquam! Harum inventore quod, nesciunt eaque itaque laborum quia repudiandae quidem accusamus quo voluptatem assumenda sed fugit deleniti, autem explicabo architecto quaerat maiores, nihil reiciendis tenetur. Dolor, fugiat. Iste, atque quam? Facere repellat aperiam blanditiis praesentium minima dolor vitae fugit veritatis obcaecati. Facilis vero laudantium quae, fuga alias animi laborum velit quidem in nisi cum impedit odio dolorum atque deleniti repellendus!</p>
-            </Box>
+                <p className="about__paragraph--vision">En Punto Oriente, aspiramos a ser reconocidos como
+                el referente líder en la
+                industria de la venta de gorras,
+                destacando por la innovación, la calidad incomparable y la conexión auténtica con nuestros clientes.
+                Visualizamos un
+                futuro donde:
+                </p>
 
-            <Box
-                component="section"
-                className="about__section">
-                <h3>Valores</h3>
-                <img
-                    src="/images/about/valores.png"
-                    alt="Fotrografía de la valores de la empresa"/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore totam, nulla repellendus minima explicabo porro similique molestiae, officiis optio eos dolorem ipsum aspernatur consequuntur! Inventore aliquam beatae facere quod, vero cupiditate deleniti, laudantium dicta aperiam libero necessitatibus aspernatur consequuntur animi maiores repudiandae? Repudiandae distinctio exercitationem vel nobis, incidunt, ad odio possimus sunt, voluptatibus eligendi error ullam esse laudantium ex. Error expedita adipisci fugiat veniam quibusdam modi quis labore, blanditiis quos, rerum nobis, esse voluptate odio ad est delectus cum tempora facilis. Fuga perspiciatis odio tempore facere explicabo fugit pariatur porro quos atque! Commodi dicta, animi quam atque quod magni praesentium hic suscipit ratione accusamus quibusdam tempora at, odit aut dolor, impedit harum cum corporis eos! Quasi dolor magnam soluta pariatur distinctio modi consequuntur necessitatibus. Ut, dolorum illum! Dolor praesentium fugiat, fuga quia temporibus officiis ratione sint inventore, eos sunt asperiores quis architecto nihil vel aspernatur dolorum perspiciatis et totam. Maiores repudiandae a, reprehenderit eligendi ab distinctio laudantium saepe, iste perferendis totam nulla, provident minima corporis quibusdam et nemo? Voluptatum explicabo deserunt numquam nostrum autem harum omnis ipsa. Tenetur sequi quibusdam temporibus animi sed nulla odit, similique corporis. Et, pariatur repellat fugiat voluptatem, aperiam aliquid ullam cum dolore fugit necessitatibus sed esse, perferendis dicta? Rem ipsum neque maxime temporibus, reiciendis aliquam cum officia blanditiis ea cumque, fugit incidunt repellat eius aperiam soluta. Suscipit facere sequi molestiae ex qui necessitatibus quibusdam corporis illum, voluptatem vel nostrum autem ipsam. Numquam ipsa vitae aliquam! Harum inventore quod, nesciunt eaque itaque laborum quia repudiandae quidem accusamus quo voluptatem assumenda sed fugit deleniti, autem explicabo architecto quaerat maiores, nihil reiciendis tenetur. Dolor, fugiat. Iste, atque quam? Facere repellat aperiam blanditiis praesentium minima dolor vitae fugit veritatis obcaecati. Facilis vero laudantium quae, fuga alias animi laborum velit quidem in nisi cum impedit odio dolorum atque deleniti repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore totam, nulla repellendus minima explicabo porro similique molestiae, officiis optio eos dolorem ipsum aspernatur consequuntur! Inventore aliquam beatae facere quod, vero cupiditate deleniti, laudantium dicta aperiam libero necessitatibus aspernatur consequuntur animi maiores repudiandae? Repudiandae distinctio exercitationem vel nobis, incidunt, ad odio possimus sunt, voluptatibus eligendi error ullam esse laudantium ex. Error expedita adipisci fugiat veniam quibusdam modi quis labore, blanditiis quos, rerum nobis, esse voluptate odio ad est delectus cum tempora facilis. Fuga perspiciatis odio tempore facere explicabo fugit pariatur porro quos atque! Commodi dicta, animi quam atque quod magni praesentium hic suscipit ratione accusamus quibusdam tempora at, odit aut dolor, impedit harum cum corporis eos! Quasi dolor magnam soluta pariatur distinctio modi consequuntur necessitatibus. Ut, dolorum illum! Dolor praesentium fugiat, fuga quia temporibus officiis ratione sint inventore, eos sunt asperiores quis architecto nihil vel aspernatur dolorum perspiciatis et totam. Maiores repudiandae a, reprehenderit eligendi ab distinctio laudantium saepe, iste perferendis totam nulla, provident minima corporis quibusdam et nemo? Voluptatum explicabo deserunt numquam nostrum autem harum omnis ipsa. Tenetur sequi quibusdam temporibus animi sed nulla odit, similique corporis. Et, pariatur repellat fugiat voluptatem, aperiam aliquid ullam cum dolore fugit necessitatibus sed esse, perferendis dicta? Rem ipsum neque maxime temporibus, reiciendis aliquam cum officia blanditiis ea cumque, fugit incidunt repellat eius aperiam soluta. Suscipit facere sequi molestiae ex qui necessitatibus quibusdam corporis illum, voluptatem vel nostrum autem ipsam. Numquam ipsa vitae aliquam! Harum inventore quod, nesciunt eaque itaque laborum quia repudiandae quidem accusamus quo voluptatem assumenda sed fugit deleniti, autem explicabo architecto quaerat maiores, nihil reiciendis tenetur. Dolor, fugiat. Iste, atque quam? Facere repellat aperiam blanditiis praesentium minima dolor vitae fugit veritatis obcaecati. Facilis vero laudantium quae, fuga alias animi laborum velit quidem in nisi cum impedit odio dolorum atque deleniti repellendus!</p>
+                <ol>
+                    <li>Tendencias Definidas: somos pioneros en la creación de tendencias de gorras, anticipando y
+                    liderando la evolución de la
+                    moda.</li>
+                    <li>Cliente en el Centro: nos destacamos por la lealtad y la satisfacción del cliente, siendo
+                    reconocidos como el destino de
+                    confianza para la expresión de estilo personal.</li>
+                    <li>Responsabilidad Sostenible: demostramos un compromiso continuo con prácticas comerciales
+                    sostenibles y responsables,
+                    inspirando a otros a seguir nuestro ejemplo.</li>
+                    <li>Alcance Global: expandimos nuestra presencia a nivel mundial, llevando la moda en gorras de alta
+                    calidad a clientes en
+                    todos los rincones del mundo.</li>
+                </ol>
+
             </Box>
+            <p>En Punto Oriente, cada gorra cuenta una historia, y nuestra visión es ser
+                parte de la narrativa única
+                de cada
+                cliente, proporcionando productos que no solo complementan su estilo, sino que también reflejan sus
+                valores y
+                aspiraciones.</p>
         </Box>
     );
 };

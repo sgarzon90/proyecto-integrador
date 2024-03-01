@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Box } from "@mui/material";
+import { gallery } from "../../data/data.js";
 import "./home.scss";
 
 import { IT_IS_OFF } from "../../constanst/general.js";
@@ -7,10 +8,24 @@ import { IT_IS_OFF } from "../../constanst/general.js";
 import ProductSearch from "../../components/productSearch/ProductSearch";
 import ProductCard from "../../components/productCard/ProductCard";
 import ProductCreateCard from "../../components/productCreateCard/ProductCreateCard.jsx";
+import { ShoppingCartContext } from "../../contexts/ShoppingCartContext";
 
 const Home = () => {
     const [ products, setProducts ] = useState([]);
+    const { removeProduct } = useContext(ShoppingCartContext);
 
+    useEffect(() => {
+        setProducts(gallery);
+    }, []);
+
+    const handleCardDelete = (productId) => {
+
+        removeProduct(productId);
+        const updatedProducts = products.filter((product) => product.id !== productId);
+        setProducts(updatedProducts);
+        // Actualizar el almacenamiento local
+        localStorage.setItem("products", JSON.stringify(updatedProducts));
+    };
     return (
         <Box className="home">
             <Box
@@ -29,6 +44,8 @@ const Home = () => {
                         <ProductCard
                             key={product.id}
                             product={product}
+                            description={product.description}
+                            onCardDelete={handleCardDelete}
                             itIsOff={IT_IS_OFF}
                             setProducts={setProducts}/>
                     ))}

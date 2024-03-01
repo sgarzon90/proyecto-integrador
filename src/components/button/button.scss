@@ -1,17 +1,17 @@
 @use "../../styles/scss/variables" as var;
 
 .button {
-    color: var.$colorFontLight !important;
-    background-color: var.$colorBackgroundDark !important;
+    color: var.$colorFontBasicWhite !important;
+    background-color: var.$colorBackgroundBlacker !important;
 
     &:hover,
     &:active {
-        background-color: var.$colorBackgroundDarker !important;
+        background-color: var.$colorBackgroundBlackLight !important;
     }
 
     svg {
         font-size: var.$fontSizeMD;
-        fill: var.$colorFontLight !important;
+        fill: var.$colorFontBasicWhite !important;
     }
 
     &--danger {

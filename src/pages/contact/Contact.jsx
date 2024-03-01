@@ -1,46 +1,45 @@
 import { useState } from "react";
+import { Box } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Box } from "@mui/material";
 import "./contact.scss";
-
-import {
-    MESSAGE_REQUIRED,
-    MESSAGE_TELEPHONE_INVALID,
-    MESSAGE_EMAIL_INVALID,
-    REGEX_TELEPHONE,
-    REGEX_EMAIL,
-} from "../../constanst/regexPattern.js";
-
-import InputField from "../../components/form/inputField/InputField";
-import Button from "../../components/button/Button";
 
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
-import Alert from "../../components/alert/Alert.jsx";
+
+import InputField from "../../components/form/inputField/InputField";
+import Button from "../../components/button/Button";
+import Alert from "../../components/alert/Alert";
 
 const Contact = () => {
-    const [ openAlert, setOpenAlert ] = useState(false);
+    const MESSAGE_REQUIRED = "Este dato es obligatorio";
+    const REGEX_TELEPHONE = /^[0-9()+-]*$/;
+    const REGEX_EMAIL = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const validationSchema = yup.object({
         fullname: yup
             .string("Ingresa tu nombre y apellido")
-            .min(7, "Ingresa un nombre y apellido que tenga mas de 7 carateres")
+            .min(4, "Ingresa un nombre y apellido que tenga más de 4 caracteres(Ejm: Luis)")
             .required(MESSAGE_REQUIRED),
         telephone: yup
             .string("Ingresa tu teléfono")
-            .matches(REGEX_TELEPHONE, MESSAGE_TELEPHONE_INVALID)
+            .min(6, "Ingresa un teléfono que tenga entre 6 y 13 caracteres (Ejm:5613084)")
+            .max(13, "Ingresa un teléfono que tenga entre 6 y 13 caracteres (Ejm:3106994458)")
+            .matches(REGEX_TELEPHONE, "Ingresa un teléfono válido")
             .required(MESSAGE_REQUIRED),
         email: yup
             .string("Ingresa tu email")
-            .matches(REGEX_EMAIL, MESSAGE_EMAIL_INVALID)
+            .matches(REGEX_EMAIL, "Ingresa un email válido (Ejm:Prueba@gmail.com)")
             .required(MESSAGE_REQUIRED),
         consult: yup
             .string("Ingresa tu consulta")
-            .min(11, "Ingresa una consulta que tenga entre 15 y 150 carateres")
+            .min(15, "Ingresa una consulta que tenga entre 15 y 150 caracteres")
+            .max(150, "Ingresa una consulta que tenga entre 15 y 150 caracteres")
             .required(MESSAGE_REQUIRED),
     });
+
+    const [ openAlert, setOpenAlert ] = useState(false);
 
     const formik = useFormik({
         initialValues: {
@@ -50,7 +49,7 @@ const Contact = () => {
             consult: "",
         },
         validationSchema: validationSchema,
-        onSubmit: (values, { resetForm }) => {
+        onSubmit: (values, { resetForm } ) => {
             console.log(values);
             setOpenAlert(true);
             resetForm();
@@ -62,7 +61,7 @@ const Contact = () => {
             <Box
                 component="section"
                 className="contact__section">
-                <h3>Hace tu consulta</h3>
+                <h3>Escribe tu consulta</h3>
 
                 <Box
                     component="form"
@@ -116,11 +115,7 @@ const Contact = () => {
                         inputProps={{ maxLength: 150 }}>
                     </InputField>
 
-                    <Button type="submit">Envíar consulta</Button>
-                    <Alert
-                        openAlert={openAlert}
-                        setOpenAlert={setOpenAlert}
-                        message="Tu consulta se ha enviado correctamente"/>
+                    <Button type="button">Envíar consulta</Button>
                 </Box>
 
             </Box>
@@ -132,24 +127,31 @@ const Contact = () => {
                 <Box className="contact__section__data">
                     <Box>
                         <PlaceIcon/>
-                        <span>Av. Siempreviva 740 - San Juan - Argentina.</span>
+                        <span>Plaza Botero,
+                        Medellín</span>
                     </Box>
                     <Box>
                         <PhoneIcon/>
-                        <span>02644258877</span>
+                        <span>+57
+                        123456789</span>
                     </Box>
                     <Box>
                         <MailIcon/>
-                        <span>info@pizzastore.com</span>
+                        <span>PuntoOriente@empresa.com</span>
                     </Box>
                 </Box>
                 <Box className="contact__section__map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.5223962102427!2d-68.52767252438777!3d-31.537275074206214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x968140281b059031%3A0xbdafc7e302f74c9a!2sPlaza%2025%20de%20Mayo!5e0!3m2!1ses-419!2sar!4v1706052594529!5m2!1ses-419!2sar"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0856704545045!2d-75.56864147956966!3d6.252442375082657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428fecb4dff77%3A0x2e5a7e51ab929892!2sPlaza%20Botero%20-%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1sen!2sco!4v1699822543322!5m2!1sen!2sco"
                         loading="lazy">
                     </iframe>
                 </Box>
             </Box>
+            <Alert
+                openAlert={openAlert}
+                setOpenAlert={setOpenAlert}
+                message="Tu consulta se ha enviado correctamente"
+            />
         </Box>
     );
 };

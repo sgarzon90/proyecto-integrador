@@ -9,11 +9,11 @@
 
     .Mui-checked {
         .MuiSwitch-thumb {
-            background-color: var.$colorBackgroundDarker;
+            background-color: var.$colorFontDarker;
         }
     }
 
     .Mui-checked+.MuiSwitch-track {
-        background-color: var.$colorBackgroundDark !important;
+        background-color: var.$colorFontDarker !important;
     }
 }

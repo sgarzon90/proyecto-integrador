@@ -13,9 +13,8 @@ const Product = () => {
         <Box className="product">
             <Box
                 component="section"
-                className="product_section">
-                <h3>Producto</h3>
-
+                className="product__section">
+                <h3 className="product__section title">Gestionar Productos</h3>
                 <FormProduct initialValues={productRef.current}/>
             </Box>
         </Box>
