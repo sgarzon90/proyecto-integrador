@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { ShoppingCartContext } from "../../../contexts/ShoppingCartContext.jsx";
-import ShoppingCartModal from "../../shoppingCart/ShoppingCartModal.jsx";
+import { ShoppingCartModal } from "../../shoppingCart/ShoppingCartModal.jsx";
 import "./navbar.scss";
 
 import links from "../../../links/links";
