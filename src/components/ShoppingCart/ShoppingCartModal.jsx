@@ -98,7 +98,7 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
                             className="button__shop"
                             onClick={handleProcessPurchase}
                             disabled={isCartEmpty}
-                            style={{ marginTop: "10px" }}
+                            style={{ marginTop: "10px", color: isCartEmpty ? "white" : "white" }}
                         >
                     Comprar
                         </Button>
