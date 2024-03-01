@@ -8,6 +8,7 @@
 
         h3 {
             margin-bottom: 0.5rem;
+            font-size: 1.8em;
         }
 
         &__search {
@@ -55,10 +56,16 @@
 
     @media (max-width: 650px) {
         &__section {
+
+
             &__search {
                 display: grid;
                 grid-template-columns: 1fr;
                 gap: 1vw;
+
+                h3 {
+                    font-size: 1.6em;
+                }
 
                 div {
                     width: 100%;

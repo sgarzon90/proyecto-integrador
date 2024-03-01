@@ -11,11 +11,6 @@ const Alert = (props) => {
 
     const navigate = useNavigate();
 
-    // useNavigate es un hook proporcionado por React Router. Este hook permite
-    // la navegación programática en la aplicación, lo que significa que puedes
-    // cambiar de ruta (URL) de forma dinámica en respuesta a ciertos eventos
-    // que sucedan en la aplicación.
-
     const handleOnClickClose = () => {
         setOpenAlert(false);
 

@@ -59,7 +59,6 @@ const useProducts = () => {
         setItem("products", productsWithoutThisProduct);
     };
 
-    // Función para obtener un producto por su ID
     const getProductById = (id) => {
         return items.products.find((product) => product.id === id);
     };

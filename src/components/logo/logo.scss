@@ -1,8 +1,10 @@
+@use "../../styles/scss/variables" as var;
+
 .logo {
     img {
         height: 5rem;
         width: 100px;
-        background-color: white;
+        background-color: var.$colorFontBasicWhite;
     }
 
     @media (max-width: 650px) {

@@ -12,7 +12,7 @@
 
     &__drawer-icon {
         svg {
-            fill: var.$colorBackgroundLight;
+            fill: var.$colorFontBasicWhite;
         }
     }
 
@@ -23,8 +23,7 @@
 
         .active {
             color: var.$colorFontDarker;
-            // text-shadow: 0.125rem 0.125rem 0.5rem var.$colorBorderDarker;
-            background-color: var.$colorBackgroundLight;
+            background-color: var.$colorBackgroundLighter;
 
         }
     }
@@ -32,13 +31,13 @@
     &__shopping-cart {
 
         .css-i4bv87-MuiSvgIcon-root {
-            fill: white;
+            fill: var.$colorFontBasicWhite;
         }
 
         &__icon-badge {
             svg {
                 font-size: 1.4rem;
-                fill: var.$colorBackgroundLight;
+                fill: var.$colorBackgroundLighter;
             }
 
             span {
@@ -62,5 +61,5 @@
 }
 
 .active {
-    background-color: var.$colorBackgroundLight;
+    background-color: var.$colorBackgroundDisabled;
 }

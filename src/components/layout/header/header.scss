@@ -21,7 +21,7 @@
 
 
         &__title {
-            color: white;
+            color: var.$colorFontBasicWhite;
             font-size: 4rem;
             font-family: "Super Plants";
         }
@@ -30,7 +30,7 @@
     @media (max-width: 650px) {
 
         .header__group__title {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
     }

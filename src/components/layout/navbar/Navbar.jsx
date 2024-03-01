@@ -95,7 +95,6 @@ const Navbar = () => {
                 </List>
             </Drawer>
 
-            {/* Renderiza el modal del carrito de compras */}
             <ShoppingCartModal
                 isOpen={openShoppingCartModal}
                 onClose={handleCloseShoppingCartModal}/>

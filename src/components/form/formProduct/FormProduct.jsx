@@ -15,7 +15,7 @@ import Alert from "../../alert/Alert.jsx";
 const FormProduct = ({ initialValues }) => {
     const { createProduct, updateProduct, getProductById } = useProducts();
     const [ openAlert, setOpenAlert ] = useState(false);
-    const [ imageLoaded, setImageLoaded ] = useState(false); // Estado para controlar si la imagen se ha cargado
+    const [ imageLoaded, setImageLoaded ] = useState(false);
 
     const formik = useFormik({
         initialValues,
@@ -23,10 +23,10 @@ const FormProduct = ({ initialValues }) => {
         onSubmit: async (values) => {
             try {
                 if (values.id && !imageLoaded) {
-                    // Si es una edición y no se cargó una nueva imagen, obtener la imagen existente
-                    const existingProduct = getProductById(values.id); // Obtener el producto por su ID
+
+                    const existingProduct = getProductById(values.id);
                     if (existingProduct) {
-                        values.image = existingProduct.image; // Asignar la imagen existente a los valores del formulario
+                        values.image = existingProduct.image;
                     }
                 }
 
@@ -49,7 +49,7 @@ const FormProduct = ({ initialValues }) => {
             reader.onload = () => {
                 const dataUrl = reader.result;
                 formik.setFieldValue("image", dataUrl);
-                setImageLoaded(true); // Establecer que la imagen se ha cargado
+                setImageLoaded(true);
             };
             reader.readAsDataURL(file);
         }
@@ -67,7 +67,7 @@ const FormProduct = ({ initialValues }) => {
                 name="name"
                 value={formik.values.name}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur} // Asegúrate de pasar la función handleBlur aquí
+                onBlur={formik.handleBlur}
                 error={formik.touched.name && Boolean(formik.errors.name)}
                 errorMessage={formik.touched.name && formik.errors.name}
                 inputProps={{ maxLength: 25 }}
@@ -92,8 +92,7 @@ const FormProduct = ({ initialValues }) => {
                 errorMessage={formik.touched.stock && formik.errors.stock}
                 inputProps={{ maxLength: 6 }}
             />
-            {/* Agregar los campos adicionales */}
-            {/* Marca */}
+
             <InputField
                 label="Marca"
                 name="brand"
@@ -101,14 +100,14 @@ const FormProduct = ({ initialValues }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
             />
-            {/* Categoría */}
+
             <FormControl fullWidth>
                 <InputLabel id="category-label">Categoría</InputLabel>
                 <Select
                     labelId="category-label"
                     id="category"
                     name="category"
-                    value={formik.values.category || ""} // Proporciona una cadena vacía como valor predeterminado si es undefined
+                    value={formik.values.category || ""}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     error={formik.touched.category && Boolean(formik.errors.category)}
@@ -118,7 +117,7 @@ const FormProduct = ({ initialValues }) => {
                     <MenuItem value="Productos de Limpieza">Productos de Limpieza</MenuItem>
                 </Select>
             </FormControl>
-            {/* Descripción Larga */}
+
             <InputField
                 label="Descripción"
                 name="description"
@@ -130,21 +129,20 @@ const FormProduct = ({ initialValues }) => {
                 error={formik.touched.description && Boolean(formik.errors.description)}
                 errorMessage={formik.touched.description && formik.errors.description}
             />
-            {/* Producto Importado */}
+
             <Switch
                 label="Producto Importado"
                 name="isImported"
                 value={formik.values.isImported}
                 onChange={(event) => formik.setFieldValue("isImported", event.target.checked)}
             />
-            {/* Producto Nacional */}
+
             <Switch
                 label="Producto Nacional"
                 name="isNational"
                 value={formik.values.isNational}
                 onChange={(event) => formik.setFieldValue("isNational", event.target.checked)}
             />
-            {/* Envío sin Cargo */}
             <Switch
                 label="Envío sin Cargo"
                 name="freeShipping"
@@ -158,14 +156,13 @@ const FormProduct = ({ initialValues }) => {
                 value={formik.values.isPromotion}
                 onChange={formik.handleChange}/>
 
-            {/* Fotografía */}
             <FormControl fullWidth>
 
                 <InputLabel id="photo-label"></InputLabel>
                 <InputField
                     name="image"
-                    type="file" // Cambia a type="file" para permitir la carga de archivos
-                    onChange={handleImageChange} // No es necesario onBlur para un campo de archivo
+                    type="file"
+                    onChange={handleImageChange}
                     inputProps={{ accept: "image/*" }}
                 />
                 {formik.values.image && (
@@ -205,7 +202,7 @@ FormProduct.propTypes = {
         stock: PropTypes.number.isRequired,
         price: PropTypes.number.isRequired,
         isPromotion: PropTypes.bool.isRequired,
-        image: PropTypes.string, // Cambia aquí
+        image: PropTypes.string,
     }),
 };
 
@@ -213,15 +210,15 @@ FormProduct.defaultProps = {
     initialValues: {
         name: "",
         description: "",
-        image: "", // Usa 'photo' en lugar de 'image' para la imagen
+        image: "",
         stock: 0,
         price: 0,
         isPromotion: false,
-        brand: "", // Si hay un valor inicial, proporciona la marca aquí
-        category: "Gorra", // Define la categoría predeterminada
-        isImported: false, // Define si es importado o no
-        isNational: false, // Define si es nacional o no
-        freeShipping: false, // Define si tiene envío sin cargo o no
+        brand: "",
+        category: "Gorra",
+        isImported: false,
+        isNational: false,
+        freeShipping: false,
     },
 };
 

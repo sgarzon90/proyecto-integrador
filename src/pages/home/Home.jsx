@@ -23,7 +23,7 @@ const Home = () => {
         removeProduct(productId);
         const updatedProducts = products.filter((product) => product.id !== productId);
         setProducts(updatedProducts);
-        // Actualizar el almacenamiento local
+
         localStorage.setItem("products", JSON.stringify(updatedProducts));
     };
     return (

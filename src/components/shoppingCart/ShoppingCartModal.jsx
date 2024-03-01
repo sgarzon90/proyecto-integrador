@@ -123,7 +123,6 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
     );
 };
 
-// Prop types
 ShoppingCartModal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,

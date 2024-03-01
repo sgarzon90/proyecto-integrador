@@ -8,20 +8,20 @@ const ShoppingCartProvider = (props) => {
     const { children } = props;
     const { items, setItem } = useLocalStorage({
         shoppingCart: [],
-        products: [], // Agrega la propiedad products inicializada
+        products: [],
     });
 
     const addProductCart = (product) => {
         const productQueEstaEnLS = getProductCart(product.id);
         if (productQueEstaEnLS) {
-            // cuando existe en LS
+
             product.amount = productQueEstaEnLS.amount + 1;
             const index = items.shoppingCart.findIndex((item) => item.id === product.id);
             const updatedCart = [...items.shoppingCart];
             updatedCart[index] = product;
             setItem("shoppingCart", updatedCart);
         } else {
-            // cuando no existe en LS
+
             product.amount = 1;
             setItem("shoppingCart", [ ...items.shoppingCart, product ]);
         }
@@ -46,7 +46,7 @@ const ShoppingCartProvider = (props) => {
     };
 
     const removeProductFromCart = (productId) => {
-        // Actualizar el carrito, eliminando el producto con el productId
+
         const updatedCart = items.shoppingCart.filter((item) => item.id !== productId);
         updateShoppingCart(updatedCart);
     };
@@ -62,16 +62,16 @@ const ShoppingCartProvider = (props) => {
     };
 
     const processShoppingCart = () => {
-        // Lógica para procesar el carrito de compras (descontar stock, vaciar el carrito, etc.)
+
         items.shoppingCart.forEach((item) => {
-            // Restar la cantidad comprada del stock disponible
+
             const updatedStock = item.stock - item.amount;
-            // Actualizar el stock en el objeto de producto en el localStorage
+
             updateProductStock(item.id, updatedStock);
-            // Actualizar el stock en el carrito de compras
+
             item.stock = updatedStock >= 0 ? updatedStock : 0;
         });
-        // Vaciar el carrito después de procesar la compra
+
         updateShoppingCart([]);
     };
 

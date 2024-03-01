@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useContext, useState, useEffect } from "react"; // Importar useState
+import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
 import { Box, Card, CardActions, CardContent, CardMedia, IconButton } from "@mui/material";
 import { Typography } from "@mui/material";

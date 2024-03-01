@@ -18,13 +18,13 @@
         }
 
         .close-icon {
-            color: white !important;
+            color: var.$colorFontBasicWhite !important;
             cursor: pointer;
         }
     }
 
     .cart-table {
-        background-color: var.$colorBackgroundLight;
+        background-color: rgb(250, 252, 255);
 
         .MuiTable-root {
             border-collapse: collapse;
@@ -32,7 +32,7 @@
         }
 
         .MuiTableHead-root th {
-            background-color: var.$colorBackgroundLight;
+            background-color: rgb(250, 252, 255);
             font-weight: bold;
         }
 

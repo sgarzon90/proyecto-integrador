@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 const useLocalStorage = (initialValue = {}) => {
     const itemsRef = useRef({});
-    const [ localStorageItems, setLocalStorageItems ] = useState(initialValue); // Inicializar con initialValue
+    const [ localStorageItems, setLocalStorageItems ] = useState(initialValue);
 
     const getItemValue = (key) => {
         const value = window.localStorage.getItem(key);
