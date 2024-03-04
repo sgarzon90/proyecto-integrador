@@ -24,8 +24,12 @@
         .active {
             color: var.$colorFontDarker;
             background-color: var.$colorBackgroundLighter;
-
         }
+
+        :hover {
+            color: var.$colorFontLight;
+        }
+
     }
 
     &__shopping-cart {

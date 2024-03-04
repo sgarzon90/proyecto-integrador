@@ -94,15 +94,7 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
                 <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column", alignItems: "center", mt: 1 }}>
                     <strong>TOTAL: ${calculateTotalPurchase()}</strong>
                     <Box className="button-group">
-                        <Button
-                            variant="contained"
-                            className="button__shop"
-                            onClick={handleProcessPurchase}
-                            disabled={isCartEmpty}
-                            style={{ marginTop: "10px", color: isCartEmpty ? "white" : "white" }}
-                        >
-                    Comprar
-                        </Button>
+
                         <Button
                             variant="contained"
                             className="button__cancel"
@@ -110,6 +102,16 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
                             style={{ marginTop: "10px" }}
                         >
                     Cancelar
+                        </Button>
+
+                        <Button
+                            variant="contained"
+                            className="button__shop"
+                            onClick={handleProcessPurchase}
+                            disabled={isCartEmpty}
+                            style={{ marginTop: "10px" }}
+                        >
+                    Comprar
                         </Button>
                     </Box>
                 </Box>
