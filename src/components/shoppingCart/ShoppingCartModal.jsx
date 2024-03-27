@@ -1,16 +1,62 @@
-import PropTypes from "prop-types";
-import { Drawer, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Box, IconButton } from "@mui/material";
+import { useState, useContext } from "react";
+import { Drawer, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Box, IconButton, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
 import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
-import { useContext, useState } from "react";
 import Alert from "../alert/Alert.jsx";
+import PropTypes from "prop-types";
+import axios from "axios";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { IMAGES_URL } from "../../constanst/api.js";
 
 import "./shoppingCartModal.scss";
 
 const ShoppingCartModal = ({ isOpen, onClose }) => {
-    const { shoppingCart, removeProductFromCart, processShoppingCart, cancelShoppingCart } = useContext(ShoppingCartContext);
+    const { shoppingCart, removeProductFromCart, cancelShoppingCart } = useContext(ShoppingCartContext);
     const [ openAlert, setOpenAlert ] = useState(false);
+
+    const validationSchema = yup.object({
+        firstName: yup
+            .string("Ingresa tu nombre")
+            .min(2, "El nombre debe tener al menos 2 caracteres")
+            .required("El nombre es obligatorio"),
+        lastName: yup
+            .string("Ingresa tu apellido")
+            .min(2, "El apellido debe tener al menos 2 caracteres")
+            .required("El apellido es obligatorio"),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            firstName: "",
+            lastName: "",
+        },
+        validationSchema: validationSchema,
+        onSubmit: async (values) => {
+            try {
+                const response = await axios.post("https://puntooriente.onrender.com/api/products/process-cart", {
+                    items: shoppingCart,
+                    customerInfo: {
+                        nombre: values.firstName,
+                        apellido: values.lastName,
+                    },
+                });
+                if (response.status === 200) {
+                    setOpenAlert(true);
+                    cancelShoppingCart();
+                    formik.resetForm();
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    console.error("Error en la compra:", response.data.message);
+                }
+            } catch (error) {
+                console.error("Error de conexión:", error.message);
+            }
+        },
+    });
 
     const calculateTotalPrice = (product) => {
         return product.price * product.amount;
@@ -26,14 +72,10 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
 
     const isCartEmpty = shoppingCart.length === 0;
 
-    const handleProcessPurchase = () => {
-        processShoppingCart();
-        setOpenAlert(true);
-    };
-
     const handleCancelPurchase = () => {
         cancelShoppingCart();
         onClose();
+        formik.resetForm();
     };
 
     return (
@@ -73,7 +115,7 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
                                 <TableRow key={product.id}>
                                     <TableCell>
                                         <img
-                                            src={product.image}
+                                            src={`${IMAGES_URL}${product.imageFileName}`}
                                             alt={product.name}
                                             style={{ width: "50px" }}/>
                                     </TableCell>
@@ -93,27 +135,54 @@ const ShoppingCartModal = ({ isOpen, onClose }) => {
                 </TableContainer>
                 <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column", alignItems: "center", mt: 1 }}>
                     <strong>TOTAL: ${calculateTotalPurchase()}</strong>
-                    <Box className="button-group">
+                    <form onSubmit={formik.handleSubmit}>
+                        <TextField
+                            name="firstName"
+                            label="Nombre"
+                            variant="outlined"
+                            value={formik.values.firstName}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+                            helperText={formik.touched.firstName && formik.errors.firstName}
+                            style={{ marginBottom: "10px" }}
+                            className="form-field"
+                        />
+                        <TextField
+                            name="lastName"
+                            label="Apellido"
+                            variant="outlined"
+                            value={formik.values.lastName}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+                            helperText={formik.touched.lastName && formik.errors.lastName}
+                            style={{ marginBottom: "10px" }}
+                            className="form-field"
+                        />
 
-                        <Button
-                            variant="contained"
-                            className="button__cancel"
-                            onClick={handleCancelPurchase}
-                            style={{ marginTop: "10px" }}
-                        >
-                    Cancelar
-                        </Button>
+                        <Box className="button-group">
 
-                        <Button
-                            variant="contained"
-                            className="button__shop"
-                            onClick={handleProcessPurchase}
-                            disabled={isCartEmpty}
-                            style={{ marginTop: "10px" }}
-                        >
-                    Comprar
-                        </Button>
-                    </Box>
+                            <Button
+                                variant="contained"
+                                className="button__cancel"
+                                onClick={handleCancelPurchase}
+                                style={{ marginTop: "10px" }}
+                            >
+                                Cancelar
+                            </Button>
+
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                className="button__shop"
+                                disabled={isCartEmpty}
+                                style={{ marginTop: "10px" }}
+                            >
+                                Comprar
+                            </Button>
+                        </Box>
+                    </form>
                 </Box>
                 <Alert
                     openAlert={openAlert}

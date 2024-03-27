@@ -1,76 +1,85 @@
-import useLocalStorage from "./useLocalStorage.js";
-import { gallery } from "../data/data.js";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const useProducts = () => {
-    const { items, setItem } = useLocalStorage({ products: gallery });
 
-    const normalizeValue = (value = "") => {
-        return value.toLowerCase().trim().replace(/[áéíóú]/g, (match) => {
-            return {
-                "á": "a",
-                "é": "e",
-                "í": "i",
-                "ó": "o",
-                "ú": "u",
-            }[match];
-        });
-    };
-
-    const searchProducts = (text) => {
-        const preparedText = normalizeValue(text);
-
-        return items.products.filter((product) => {
-            const preparedName = normalizeValue(product.name);
-            return preparedText.length === 0 || preparedName.includes(preparedText);
-        });
-    };
-
-    const generateId = () => {
-        return items.products.reduce((maxId, product) => Math.max(maxId, product.id), 0) + 1;
-    };
-
-    const createSchema = (values) => {
-        return {
-            id: values.id ?? generateId(),
-            name: values.name ?? "",
-            description: values.description ?? "",
-            image: values.image ?? "/images/home/products/img0001.jpg",
-            stock: Number(values.stock) ?? 0,
-            price: Number(values.price) ?? 0,
-            isPromotion: values.isPromotion ?? false,
+    const [ products, setProducts ] = useState([]);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get("https://puntooriente.onrender.com/api/products/");
+                setProducts(response.data.data);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
         };
+        fetchProducts();
+    }, []);
+
+    const searchProducts = async (text) => {
+        try {
+            const response = await axios.get(`https://puntooriente.onrender.com/api/products?search=${text}`);
+            setProducts(response.data.data);
+        } catch (error) {
+            console.error("Error searching products:", error);
+        }
     };
 
-    const createProduct = (values) => {
-        const newProduct = createSchema(values);
-        const newProducts = [ ...items.products, newProduct ];
-        setItem("products", newProducts);
+    const createProduct = async (productData) => {
+        try {
+            const response = await axios.post("https://puntooriente.onrender.com/api/products", productData);
+            setProducts([ ...products, response.data.data ]);
+        } catch (error) {
+            console.error("Error creating product:", error);
+            if (error.response) {
+                console.error("Response data:", error.response.data);
+                console.error("Response status:", error.response.status);
+                console.error("Response headers:", error.response.headers);
+            }
+        }
     };
 
-    const updateProduct = (values) => {
-        const updatedProducts = items.products.map((product) =>
-            product.id === values.id ? createSchema(values) : product,
-        );
-        setItem("products", updatedProducts);
+    const updateProduct = async (productId, productData) => {
+        try {
+            const response = await axios.put(`https://puntooriente.onrender.com/api/products/${productId}`, productData);
+            setProducts(products.map((product) => (product.id === productId ? response.data.data : product)));
+        } catch (error) {
+            console.error("Error updating product:", error);
+        }
     };
 
-    const removeProduct = (id) => {
-        const productsWithoutThisProduct = items.products.filter((product) => product.id !== id);
-        setItem("products", productsWithoutThisProduct);
+    const deleteProduct = async (productId) => {
+        try {
+            await axios.delete(`https://puntooriente.onrender.com/api/products/${productId}`);
+            setProducts(products.filter((product) => product.id !== productId));
+        } catch (error) {
+            console.error("Error deleting product:", error);
+        }
     };
 
-    const getProductById = (id) => {
-        return items.products.find((product) => product.id === id);
+    const uploadProductImage = async (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+            const response = await axios.post("https://puntooriente.onrender.com/api/products/upload/", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
+            return response.data;
+        } catch (error) {
+            console.error("Error uploading product image:", error);
+        }
     };
 
     return {
-        products: items.products,
+        products,
         searchProducts,
         createProduct,
         updateProduct,
-        removeProduct,
-        getProductById,
-
+        deleteProduct,
+        uploadProductImage,
     };
 };
 

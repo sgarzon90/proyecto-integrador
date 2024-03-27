@@ -11,6 +11,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import InputField from "../../components/form/inputField/InputField.jsx";
 import Button from "../../components/button/Button";
 import Alert from "../../components/alert/Alert";
+import axios from "axios";
 
 const Contact = () => {
     const MESSAGE_REQUIRED = "Este dato es obligatorio";
@@ -49,11 +50,16 @@ const Contact = () => {
             consult: "",
         },
         validationSchema: validationSchema,
-        onSubmit: (values, { resetForm } ) => {
-            console.log(values);
-            setOpenAlert(true);
-            resetForm();
+        onSubmit: async (values, { resetForm }) => {
+            try {
+                await axios.post("https://puntooriente.onrender.com/api/contact", values); // Envia la consulta al backend
+                setOpenAlert(true);
+                resetForm();
+            } catch (error) {
+                console.error("Error al enviar la consulta:", error);
+            }
         },
+
     });
 
     return (
@@ -143,7 +149,8 @@ const Contact = () => {
                 <Box className="contact__section__map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0856704545045!2d-75.56864147956966!3d6.252442375082657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428fecb4dff77%3A0x2e5a7e51ab929892!2sPlaza%20Botero%20-%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1sen!2sco!4v1699822543322!5m2!1sen!2sco"
-                        loading="lazy">
+                        loading="lazy"
+                        title="Ubicación de la Plaza Botero en Medellín, Antioquia">
                     </iframe>
                 </Box>
             </Box>

@@ -4,6 +4,8 @@
     publish   = "dist"
     base      = "/"
 
+[build.enviroment]
+    VITE_BACKEND_URL = "https://puntooriente.onrender.com"
 
 [[redirects]]
     from   = "/*"

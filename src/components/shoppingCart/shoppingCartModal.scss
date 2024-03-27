@@ -76,6 +76,10 @@
             }
         }
 
+        .form-field {
+            margin: 5px; // Agrega un espacio entre los campos de nombre y apellido
+        }
+
         .MuiSvgIcon-root {
             fill: var.$colorBackgroundDanger;
         }

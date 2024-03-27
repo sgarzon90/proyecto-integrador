@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Box } from "@mui/material";
 import PropTypes from "prop-types";
 import { useFormik } from "formik";
@@ -7,22 +6,17 @@ import "./productSearch.scss";
 
 import InputField from "../form/inputField/InputField.jsx";
 import Button from "../button/Button.jsx";
-
 import SearchIcon from "@mui/icons-material/Search";
-import useProducts from "../../hooks/useProducts.js";
 
-const ProductSearch = (props) => {
-    const { setProducts } = props;
-    const { products, searchProducts } = useProducts();
-
-    useEffect(() => {
-        setProducts(products);
-    }, [products]);
-
+const ProductSearch = ({ searchProducts }) => {
     const validationSchema = yup.object({
-        search: yup
-            .string()
-            .min(3, "Ingresa 3 o más carateres"),
+        text: yup
+            .mixed()
+            .test("is-number-or-string", "Ingresa 3 o más caracteres o un número", (value) => {
+                if (!value) return true;
+                if (!isNaN(value)) return true;
+                return value.trim().length >= 3;
+            }),
     });
 
     const formik = useFormik({
@@ -30,9 +24,9 @@ const ProductSearch = (props) => {
             text: "",
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            const productsFound = searchProducts(values.text);
-            setProducts(productsFound);
+        onSubmit: async (values) => {
+            const productsFound = await searchProducts(values.text);
+            console.log(productsFound);
         },
     });
 
@@ -40,8 +34,7 @@ const ProductSearch = (props) => {
         formik.handleChange(event);
 
         if (event.target.value.trim().length === 0) {
-            const productsFound = searchProducts(event.target.value);
-            setProducts(productsFound);
+            searchProducts("");
         }
     };
 
@@ -56,21 +49,20 @@ const ProductSearch = (props) => {
             <InputField
                 name="text"
                 value={formik.values.text}
-                onChange={(event) => handleOnChange(event)}
+                onChange={handleOnChange}
                 onBlur={formik.handleBlur}
                 error={formik.touched.text && Boolean(formik.errors.text)}
                 errorMessage={formik.touched.text && formik.errors.text}
                 inputProps={{ maxLength: 10 }}
                 placeholder="Buscar..."
-            >
-            </InputField>
+            />
             <Button type="submit"><SearchIcon/></Button>
         </Box>
     );
 };
 
 ProductSearch.propTypes = {
-    setProducts: PropTypes.func.isRequired,
+    searchProducts: PropTypes.func.isRequired,
 };
 
 export default ProductSearch;

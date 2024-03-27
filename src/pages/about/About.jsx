@@ -9,7 +9,8 @@ const About = () => {
                 className="about__section">
                 <img
                     src="/images/about/capm&v.jpg"
-                    alt="Fotrografía misión-visión"/>
+                    alt="Fotrografía misión-visión"
+                    className="img--mision"/>
                 <h3>Misión</h3>
                 <p className="about__paragraph--mision">Nuestra misión en Punto Oriente es ofrecer a nuestros
                 clientes la más amplia y
@@ -41,7 +42,11 @@ const About = () => {
             <Box
                 component="section"
                 className="about__section about__section--vision">
-                <h3>Visión</h3>
+                <img
+                    src="/images/about/product1.png"
+                    alt="Fotrografía misión-visión"
+                    className="img--vision"/>
+                <h3 className="title__vision">Visión</h3>
                 <p className="about__paragraph--vision">En Punto Oriente, aspiramos a ser reconocidos como
                 el referente líder en la
                 industria de la venta de gorras,
@@ -66,12 +71,18 @@ const About = () => {
                 </ol>
 
             </Box>
+            <img
+                src="/images/about/cap15.jpeg"
+                alt="Fotrografía misión-visión"
+                className="img--values"/>
             <p>En Punto Oriente, cada gorra cuenta una historia, y nuestra visión es ser
                 parte de la narrativa única
                 de cada
                 cliente, proporcionando productos que no solo complementan su estilo, sino que también reflejan sus
                 valores y
-                aspiraciones.</p>
+                aspiraciones. Valoramos la autenticidad, la responsabilidad y la pasión en todo lo que hacemos, y nos
+                esforzamos por crear un impacto positivo en la vida de nuestros clientes y en la comunidad en general.
+            </p>
         </Box>
     );
 };

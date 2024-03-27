@@ -2,6 +2,7 @@
 
 .about {
     width: var.$widthContent;
+    font-size: 18px;
 
     &__section {
         height: max-content;
@@ -11,9 +12,9 @@
             margin-bottom: 0.5rem;
         }
 
-        img {
+        .img--mision {
             height: fit-content;
-            width: 35%;
+            width: 20%;
             margin: 0 0 0.25rem 1rem;
             float: right;
             border-radius: 0.75rem 0 0.75rem 0;
@@ -31,9 +32,35 @@
 
     }
 
+    &__section--vision {
+
+        .title__vision,
+        .about__paragraph--vision {
+            margin-left: 20vw;
+        }
+
+        ol {
+            margin-left: 20vw;
+        }
+
+        .img--vision {
+            float: left;
+            width: 20%;
+        }
+
+    }
+
+    .img--values {
+        float: right;
+        width: 12%;
+    }
+
+
     @media (max-width: 650px) {
 
-        img {
+        .img--mision,
+        .img--vision,
+        .img--values {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
@@ -49,6 +76,15 @@
             font-size: 0.8em;
         }
 
+        &__section--vision {
+
+            ol,
+            .title__vision,
+            .about__paragraph--vision {
+                margin-left: 0;
+            }
+        }
+
     }
 
     @media (min-width: 651px) {
@@ -62,8 +98,10 @@
             font-size: 1.150em;
         }
 
-        img {
-            width: 38%;
+        .img--mision,
+        .img--vision,
+        .img--values {
+            width: 20%;
         }
     }
 }

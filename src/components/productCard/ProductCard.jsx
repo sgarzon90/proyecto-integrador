@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../../contexts/ShoppingCartContext.jsx";
-import { Box, Card, CardActions, CardContent, CardMedia, IconButton } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material";
 import "./productCard.scss";
 
 import Button from "../button/Button";
@@ -11,6 +10,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { IMAGES_URL } from "../../constanst/api.js";
 
 import { NavLink } from "react-router-dom";
 
@@ -59,11 +59,15 @@ const ProductCard = ({ product, itIsOff, onCardDelete }) => {
                     <IconButton onClick={handleCardDelete}><DeleteIcon/></IconButton>
                 </Box>
             </Box>
-            <CardMedia
-                component="img"
-                className="product-card__image"
-                image={product.image}
-                alt={`Fotografía de ${product.name}`}/>
+            {product.imageFileName && (
+                <CardMedia
+                    component="img"
+                    className="product-card__image"
+                    // image={product.imageFileName}
+                    image={`${IMAGES_URL}${product.imageFileName}`}
+                    alt={`Fotografía de ${product.name}`}
+                />
+            )}
             <CardContent className="product-card__content">
                 <h4>{product.name}</h4>
                 <p><span>Descripción:</span> {product.description}</p>
@@ -98,7 +102,7 @@ ProductCard.propTypes = {
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
+        imageFileName: PropTypes.string.isRequired,
         stock: PropTypes.number.isRequired,
         price: PropTypes.number.isRequired,
         isPromotion: PropTypes.bool.isRequired,
