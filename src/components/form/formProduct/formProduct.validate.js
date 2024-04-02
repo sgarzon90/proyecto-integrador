@@ -26,10 +26,7 @@ const validationSchema = yup.object({
         .min(10, "Ingresa una descripción que tenga entre 10 y 300 caracteres")
         .max(300, "Ingresa una descripción que tenga entre 10 y 300 caracteres")
         .required(MESSAGE_REQUIRED),
-    files: yup
-        .array()
-        .min(1, "Debe seleccionar una imagen")
-        .required(MESSAGE_REQUIRED),
+
 });
 
 export default validationSchema;

@@ -23,14 +23,19 @@ const FormProduct = ({ initialValues }) => {
         initialValues: initialValues,
         validationSchema: validationSchema,
         onSubmit: async (values) => {
-            if (!values.files || values.files.length === 0) {
-                console.error("No se ha seleccionado ningún archivo.");
-                return;
-            }
-
             try {
-                const response = await uploadProductImage(values.files[0]);
-                values.imageFileName = response?.data?.filename ? response.data.filename : IMAGE_DEFAULT_NAME;
+                const imageFile = values.files?.[0];
+                if (!imageFile) {
+
+                    if (values.id) {
+                        values.imageFileName = initialValues.imageFileName;
+                    } else {
+                        values.imageFileName = IMAGE_DEFAULT_NAME;
+                    }
+                } else {
+                    const response = await uploadProductImage(imageFile);
+                    values.imageFileName = response?.data?.filename ? response.data.filename : IMAGE_DEFAULT_NAME;
+                }
 
                 values.id ? await updateProduct(values.id, values) : await createProduct(values);
                 setOpenAlert(true);
@@ -39,7 +44,6 @@ const FormProduct = ({ initialValues }) => {
             }
         },
     });
-
     return (
         <Box
             component="form"
@@ -143,7 +147,9 @@ const FormProduct = ({ initialValues }) => {
                 accept={[ JPG, JPEG, PNG ]}
                 formik={formik}
                 error={formik.touched.files && Boolean(formik.errors.files)}
-                errorMessage={formik.errors.files}/>
+                errorMessage={formik.errors.files}
+                // Desactivar el botón de envío si se está cargando una imagen
+                disabled={formik.isSubmitting}/>
             <Box
                 className="form-product__image"
                 component="img"
@@ -176,7 +182,7 @@ FormProduct.propTypes = {
         description: PropTypes.string.isRequired,
         stock: PropTypes.number.isRequired,
         price: PropTypes.number.isRequired,
-        imageFileName: PropTypes.string.isRequired,
+        imageFileName: PropTypes.string,
         brand: PropTypes.string,
         category: PropTypes.string,
         isImported: PropTypes.bool,
